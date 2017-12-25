@@ -1,0 +1,59 @@
+/*-------------styleswitcher------------------*/
+
+.sliding-panel .colors-container .color-changer {
+		display: inline-block;
+		width: 27px;
+		height: 27px;
+		margin-right: 2px;
+		margin-top: 1px;
+	}
+	.sliding-panel .colors-container .color-changer a {
+		width: 27px;
+		height: 27px;
+		display: inline-block;
+		/* border: 1px solid #CECECE; */
+		cursor: pointer;
+		/* border-radius: 3px; */
+	}
+	.style-changer-panel{
+		width: 320px;
+		border:1px solid;
+		min-height: 300px;
+		position: fixed;
+		top: 50px;
+		right:0;
+	}
+
+/*---------- styleswitcher  ----------*/
+.sidePanel, .sidePanel-right{width:200px; position:fixed; left:-160px; top:30%; z-index:9999; }
+#panelHandle, #panelHandle-right{ background:#fff; font-size: 1.4em; line-height: 42px; color: #505050; text-align: center; height:43px; width:39px;  float:left; cursor:pointer; margin:0;  border:1px solid #e9e9e9;  margin: 0 0 0 -1px;  }
+#panelContent{ float:left; padding-bottom: 20px; width:160px; background: #fff; /* Old browsers */ overflow:hidden; border:1px solid #e9e9e9; }
+#panelHandle p, #panelHandle-right p {   color: #000; font-size: 24px; font-weight: bold;  margin: 0; padding: 0;font:30px/30px 'AgencyFB'; color:#007cc3; }
+.pointer{ left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(0, 128, 211, 0); border-right-color: #fff;border-width: 14px; left: -2.2%; margin-top:104px;}
+#panelContent h3{ background: #FFFFFF; padding: 10px 0 5px 17px; margin: 0; text-align: left; font:400 13px/38px "Raleway",sans-serif;}
+.colors-container{ padding: 0 10px; width: 155px; margin-left: 5px;}
+
+.nav-style-changer a{
+    border: 1px solid;
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    padding: 5px 10px;
+}
+
+.sidePanel-right{
+	right: -160px;
+	left: auto;
+}
+
+#panelContent.pull-right{
+	float: right;
+}
+#panelHandle-right{
+	margin: 0 0 0 1px;
+}
+
+@media only screen and (max-width: 767px){
+	.sidePanel, .sidePanel-right{
+		display: none;
+	}
+}

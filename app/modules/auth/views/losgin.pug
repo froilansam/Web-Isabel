@@ -1,0 +1,1240 @@
+html
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+		meta(charset='utf-8')
+		title Isabel - Traffic Violation Management System
+		//- Core Meta Data
+		meta(name='author', content='Lacsina-Malibiran-Santuico')
+		meta(name='description', content='ENGAGE v1.0. Responsive One Page Theme.')
+		meta(name='keywords', content='Violation, MMDA, System, startup, Isabel, Traffic, Traffic Violation')
+		//- Loader
+		link(rel='stylesheet', href='css/preloader/preloader.css', type='text/css')
+		//- Framework Styles
+		link(rel='stylesheet', href='css/bootstrap/bootstrap.min.css', type='text/css')
+		//- Fonts Styles
+		link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Raleway:400,600,700,800', rel='stylesheet', type='text/css')
+		//- Icons Styles
+		link(rel='stylesheet', href='css/icons/font-awesome.min.css', type='text/css')
+		link(rel='stylesheet', href='css/icons/ionicons.min.css', type='text/css')
+		//- animation
+		link(rel='stylesheet', href='css/animate.css', type='text/css')
+		//- Venders Styles
+		link(rel='stylesheet', href='css/owl/owl.carousel.css', type='text/css')
+		link(rel='stylesheet', href='css/cubeportfolio/cubeportfolio.min.css', type='text/css')
+		link(rel='stylesheet', href='css/nav/navigation-top.css', type='text/css')
+		//- link(rel='stylesheet', href='css/scrollbar/jquery.mCustomScrollbar.css', type='text/css')
+		link(rel='stylesheet', href='css/popup/magnific-popup.css', type='text/css')
+		link(rel='stylesheet', href='css/animated-headlines/animated-headlines.css', type='text/css')
+		//- Default Styles
+		link(rel='stylesheet', href='css/styles.css', type='text/css')
+		//- link(rel='stylesheet', href='css/bootstrap.css')
+		link(rel='stylesheet', href='css/formValidation.css')
+		//- LESS stylesheet for managing color presets
+		link(rel='stylesheet', type='text/css', href='css/theme.css')
+		link#theme(rel='stylesheet', type='text/css', href='css/themes/sky-blue.css', data-color='')
+		//- Responsive Styles
+		link(rel='stylesheet', href='css/responsive.css', type='text/css')
+		link(rel='stylesheet', href='css/styleswitcher.css', type='text/css')
+		link(rel='stylesheet', href='css/message.css', type='text/css')
+		
+
+		style.
+			@media screen and (min-width: 1300px){
+				.mfp-content .container {
+					width: 400px;
+					height: auto;
+				}
+				.col-lg-7 {
+					width: 95.333333%;
+				}
+				.mfp-content{
+					text-align: center;
+				}
+				.btn-dark:hover, .btn-dark:active, .btn-dark:focus, .btn-dark:after, .btn-dark:active, .btn-dark:focus {
+					color: white;
+					background-color: #557f90;
+					border-color: #557f90;
+				}
+				.btn-dark{
+					border-color: #557f90;
+					color: #557f90;
+				}
+				.member-details .content {
+						height: 176px;
+						margin-bottom: 15px;
+				}
+				.dikit{
+					letter-spacing: 0em;
+					padding: 0;
+					color: darkred !important;
+					font-weight: bold !important;
+				}
+				#signuplink:hover{
+					text-decoration: underline;
+					font-weight: bold;
+				}
+				#signup{
+					width: 51% !important;
+				}
+			}
+
+	body#page.appear-animate(data-spy='scroll', data-target='.navbar-nav', data-offset='80')
+		//
+			Preloader
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		.ip-header
+			.ip-logo
+				img.preloaderLogo.img-responsive.center-block(src='images/logo/logo-black.png', alt='preloader')
+			.ip-loader
+				svg.ip-inner(width='60px', height='60px', viewbox='0 0 80 80')
+					path.ip-loader-circlebg(d='M40,10C57.351,10,71,23.649,71,41S57.351,71,41,71 S10,57.351,10,41S23.649,10,41,10z')
+					path#ip-loader-circle.ip-loader-circle(d='M40,10C57.351,10,71,23.649,71,41S57.351,71,41,71 S10,57.351,10,41S23.649,10,41,10z')
+		//- / Preloader
+		//
+			Style Changer
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		.sidePanel
+			#panelContent
+				h3 Choose a color
+				#style-changer.sliding-panel
+					ul.list-unstyled.colors-container
+						li.color-changer
+							a(data-color='dark-blue', title='blue: #5355ae', style='background: #5355ae;')
+						li.color-changer
+							a(data-color='red', title='green: #ed4343', style='background: #ed4343;')
+						li.color-changer
+							a(data-color='light-green', title='red: #59bb9d', style='background: #59bb9d;')
+						li.color-changer
+							a(data-color='golden', title='gold: #a79759', style='background: #a79759;')
+						li.color-changer
+							a(data-color='green', title='orange: #68b560', style='background: #68b560;')
+						li.color-changer
+							a(data-color='violet', title='purple: #9e66b9', style='background: #9e66b9;')
+						li.color-changer
+							a(data-color='sky-blue', title='olive: #1fa3bb', style='background: #1fa3bb;')
+						li.color-changer
+							a(data-color='blue', title='pink: #0a59aa', style='background: #0a59aa;')
+			#panelHandle
+				span.icon.ion-gear-b
+		//- Style Changer
+		//
+			Header
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		header
+			//- Navigation
+			nav#nav-top
+				.navbar.navbar-nav.navbar-fixed-top(role='navigation')
+					.container-fluid
+						.navbar-header
+							button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+								span
+								span
+								span
+							a.navbar-brand.overlay-header-logo(href='#home')
+								img(src='images/logo/logo.png', alt='logo', role='banner')
+							a.navbar-brand.normal-header-logo(href='#home')
+								img(src='images/logo/logo-black.png', alt='logo', role='banner')
+						#navigation-menu.collapse.navbar-collapse.navbar-right
+							ul.nav.navbar-nav
+								li.active.home
+									a(href='#home') Home
+								li
+									a(href='#about-us') About
+								li
+									a(class="plus html-popup" href="#login") Log In
+			//- / Navigation
+		//- Header
+		#pageWrapper.clearfix
+			.contentWrapper
+				section#home.mainBanner.clearfix
+					#homePage.customCarousel.homePage.clearfix
+						.homeCarousel.golo-carousel.slider-1.slider-1-ex.text-center(data-nav='true', data-navspeed='1000', data-autoplayspeed='1000', data-dots='true', data-dotsspeed='1000', data-autoplay='true', data-items='1')
+							//- Slide 1
+							.item(data-background='images/slider/1.jpg')
+								//- Overlay
+								.parallax-overlay.bg-strip
+								//- / Overlay
+								.container-fluid
+									div
+										h1.text-uppercase.marb10 Engage Studio
+										p.marb50 There are many variations of passages. 
+									.btn-group.marT30
+										a.btn.btn-theme(href='/') WHO ARE WE
+										a.btn.btn-bdr.marT0(href='/') What we do
+							//- / Slide 1
+							//- Slide 2
+							.item(data-background='images/slider/2.jpg')
+								//- Overlay
+								.parallax-overlay.bg-strip
+								//- / Overlay
+								.container-fluid
+									div
+										h1.text-uppercase.marb10 Amazing Design
+										p.marb50 There are many variations of passages.
+									.btn-group.marT30
+										a.btn.btn-bdr.marT0(href='/') See our work
+							//- / Slide 2
+							//- Slide 3
+							.item(data-background='images/slider/5.jpg')
+								//- Overlay
+								.parallax-overlay.bg-strip
+								//- / Overlay
+								.container-fluid
+									div
+										h1.text-uppercase.marb10 Creative Agency
+										p.marb50 There are many variations of passages. 
+									.btn-group.marT30
+										a.btn.btn-bdr.marT0(href='/') Meet our team
+							//- / Slide 3
+						.scroll-down
+							span.mouseScroll
+				//- / Home Section
+				//- About Us
+				section#about-us.clearfix.bgColor1
+					.container
+						.row.row-padding
+							.col-md-5.col-md-offset-7.col-sm-12
+								//- Section Title
+								.heading.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+									.title-style-1.title-right.trans-bdr-right
+										h2.text-uppercase  About
+										span.spt
+									p
+										| We are nec pellenesque nulla laoreet etuis non quam orcitiam ac diam ut est nulla laoreet etuis non quam orcitiam sagittis.
+								//- / Section Title
+								//- Features
+								.features.marTop.clearfix
+									//- Feature 1
+									.feature-box.wow.fadeInRight(data-wow-delay='.3s', data-wow-duration='.9s')
+										.icon.ion-android-desktop
+										.data
+											h5.text-uppercase Unique Design
+											p
+												| We are nec pellenesque nulla laoreet etuis non quam orci, Etiam ac diam ut est sagittis porttitorlum nisl.
+									//- Feature 2
+									.feature-box.wow.fadeInRight(data-wow-delay='.35s', data-wow-duration='.9s')
+										.icon.ion-code
+										.data
+											h5.text-uppercase Quality Code
+											p
+												| We are nec pellenesque nulla laoreet etuis non quam orci, Etiam ac diam ut est sagittis porttitorlum nisl.
+									//- Feature 3
+									.feature-box.wow.fadeInRight(data-wow-delay='.4s', data-wow-duration='.9s')
+										.icon.ion-gear-a
+										.data
+											h5.text-uppercase Easy Customization
+											p
+												| We are nec pellenesque nulla laoreet etuis non quam orci, Etiam ac diam ut est sagittis porttitorlum nisl.
+								//- / Features
+					//- Left Image
+					.col-md-6.hidden-sm.leftAl.img-holder-2(data-background='images/parallaxbg/9.jpg')  
+					//- / Left Image
+				//- About us
+				//
+					Parallax section
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section#parallax-section-1.parallax.clearfix(data-background='images/parallaxbg/20.jpg')
+					.parallax-overlay.bg-strip
+					.container
+						.row.row-padding
+							//- counter 1
+							.col-md-4.col-sm-4.col-xs-12.wow.fadeInUp(data-wow-delay='.3s', data-wow-duration='.9s')
+								.counter-1-box.white
+									.counter-1
+										//- Icon
+										.icon.ion-trophy
+										//- Factor Area
+										.fact-number(data-to='19')
+											//- Factor
+											.factor.counter-1-value  
+											//- Factor Description
+											p.counter-1-name.white Awards Received
+										//- End Factor Area
+							//- / counter 1
+							//- counter 2
+							.col-md-4.col-sm-4.col-xs-12.wow.fadeInUp(data-wow-delay='.6s', data-wow-duration='.9s')
+								.counter-1-box.white
+									.counter-1
+										//- Icon
+										.icon.ion-ios-person
+										//- Factor Area
+										.fact-number(data-to='25')
+											//- Factor
+											.factor.counter-1-value  
+											//- Factor Description
+											p.counter-1-name.white Happy Clients
+										//- End Factor Area
+							//- / counter 2
+							//- counter 3
+							.col-md-4.col-sm-4.col-xs-12.wow.fadeInUp(data-wow-delay='.9s', data-wow-duration='.9s')
+								.counter-1-box.last.white
+									.counter-1
+										//- Icon
+										.icon.ion-android-checkbox-outline
+										//- Factor Area
+										.fact-number(data-to='30')
+											//- Factor
+											.factor.counter-1-value  
+											//- Factor Description
+											p.counter-1-name.white Projects Done
+										//- End Factor Area
+							//- / counter 3
+				//- / Parallax section
+				//
+					call to action bar
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section.call-to-action-bar.clearfix.ipad-view.bgColor1
+					.container
+						.row.row-padding
+							.col-md-1
+								i.icon.ion-ios-briefcase.text-center
+							.col-md-6
+								p.text-uppercase.marTB Want to see more amazing works?
+							.col-md-5
+								.btn-group.marTB
+									a.btn.btn-theme.marR40.mmar0(href='') View Portfolio
+									a.btn.btn-dark(href='') Subscribe Us
+				//- / call to action bar
+				//
+					Team
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section#team.clearfix.ipad-view.bgColor2
+					.container
+						.row.row-padding
+							.col-md-3
+								//- Section Title
+								.heading.wow.fadeIn(data-wow-delay='0.5s', data-wow-duration='.7s')
+									.title-style-1.title-left.trans-bdr-left
+										h2.text-uppercase  Team
+										span.spt
+									p
+										| There are many variations of passages of lorem ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
+								//- / Section Title
+							.col-md-9
+								//- Team carousal
+								#team-slider.golo-carousel(data-items='3', data-nav='true', data-autoplayspeed='1000')
+									//- Slide 1
+									.item.wow.flipInX(data-wow-delay='0.5s', data-wow-duration='1s')
+										.img-hover-1
+											figure
+												img(src='images/team/staff-1.jpg', alt='media')
+												figcaption
+													a.plus.html-popup(href='#member-1')
+														span.icon.ion-ios-plus-empty
+											.team-profile
+												h5.white.text-uppercase Michael Bond
+												p.white Creative Director
+												ul.socials-connect
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-facebook
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-twitter
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-linkedin
+									//- Slide 2
+									.item.wow.flipInX(data-wow-delay='.7s', data-wow-duration='1s')
+										.img-hover-1
+											figure
+												img(src='images/team/staff-2.jpg', alt='media')
+												figcaption
+													a.plus.html-popup(href='#member-2')
+														span.icon.ion-ios-plus-empty
+											.team-profile
+												h5.white.text-uppercase James Anderson
+												p.white Web engineer
+												ul.socials-connect
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-facebook
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-twitter
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-linkedin
+									//- Slide 3
+									.item.wow.flipInX(data-wow-delay='.8s', data-wow-duration='1s')
+										.img-hover-1
+											figure
+												img(src='images/team/staff-3.jpg', alt='media')
+												figcaption
+													a.plus.html-popup(href='#member-3')
+														span.icon.ion-ios-plus-empty
+											.team-profile
+												h5.white.text-uppercase Steve Moore
+												p.white Developer
+												ul.socials-connect
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-facebook
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-twitter
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-linkedin
+									//- Slide 4
+									.item
+										.img-hover-1
+											figure
+												img(src='images/team/staff-4.jpg', alt='media')
+												figcaption
+													a.plus.html-popup(href='#member-4')
+														span.icon.ion-ios-plus-empty
+											.team-profile
+												h5.white.text-uppercase James Forest
+												p.white Developer
+												ul.socials-connect
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-facebook
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-twitter
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-linkedin
+									//- Slide 5
+									.item
+										.img-hover-1
+											figure
+												img(src='images/team/staff-5.jpg', alt='media')
+												figcaption
+													a.plus.html-popup(href='#member-5')
+														span.icon.ion-ios-plus-empty
+											.team-profile
+												h5.white.text-uppercase Nikki Smith
+												p.white Art Director
+												ul.socials-connect
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-facebook
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-twitter
+													li
+														a.page_social(title='', href='#')
+															i.fa.fa-linkedin
+								//- / Team carousal
+				//- / Team
+				//
+					Services Section
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section#services.bgColor1.clearfix
+					.container
+						.row.row-padding
+							//- Section Title
+							.heading.text-center
+								.title-style-1.trans-bdr-center
+									h2.text-uppercase  Services
+									span.spt
+							.col-md-6.col-md-offset-3
+								p.text-center
+									| There are many variations of passages of lorem ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
+							//- / Section Title
+							.services-wrapper
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-monitor
+											//- Service text
+											h5.text-capitalize Web Design
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-paper-airplane
+											//- Service text
+											h5.text-capitalize Branding
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-ipad
+											//- Service text
+											h5.text-capitalize Mobile Apps
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-cube
+											//- Service text
+											h5.text-capitalize Software
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-person-stalker
+											//- Service text
+											h5.text-capitalize Social Media
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+								//- Service box
+								.col-md-4.col-sm-6
+									.item.last.wow.fadeIn(data-wow-delay='.2s', data-wow-duration='1s')
+										.service-sliderBox
+											//- Service icon
+											span
+												i.icon.ion-paintbucket
+											//- Service text
+											h5.text-capitalize Graphic Design
+											p
+												| Etiam ac diam ut est sagittis porp cious torlum nisl metus ligula vehicula diam ut est sagittis porp.
+								//- / Service box
+				//- / Services Section
+				
+			
+				//
+					Faqs Section
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section.clearfix.bgColor2
+					.container
+						.row.row-padding
+							//- Section Title
+							.heading.text-center
+								.title-style-1.trans-bdr-center
+									h2.text-uppercase  FAQs 
+									span.spt
+							//- / Section Title
+							.row.accorWrap
+								.col-sm-6.col-xs-12.accorBox
+									#accordion.accordion.page-accordion
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-one')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box  Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-one.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.dark.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-two')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-two.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.dark.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-three')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-three.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-four')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-four.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+								.col-sm-6.col-xs-12.accorBox
+									#accordion-2.accordion.page-accordion
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-five')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box  Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-five.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries, but also the leap into electronic typesetting, Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.dark.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-six')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-six.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.dark.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-seven')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-seven.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+										//- Accordion Tab
+										.panel.transparent
+											//- Heading
+											.accordion-heading
+												//- Acordion Header
+												a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#coll-eight')
+													//- Header Icon
+													//- Header
+													span.positive-s
+													h5.text-box Morbi sed mollis ipsum id pharetra duiauris ut moortis
+											//- End Heading
+											//- Details
+											#coll-eight.accordion-body.collapse
+												//- Inner
+												p.accordion-inner.sm
+													| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+												//- End Inner
+											//- End Details
+										//- End Accordion Tab
+				//- / FAQs section
+				//
+					Contact Section
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section#contact.parallax.clearfix.ipad-view.split.bgColor1(data-background='images/parallaxbg/13.jpg')
+					.parallax-overlay.bg-strip
+					.container-fluid
+						.row
+							.container.backDivLeft
+								.split-section-headings.pull-left
+									.row-padding
+										.col-md-10
+											//- Section Title
+											.heading.wow.fadeInLeft(data-wow-delay='.4s', data-wow-duration='.8s')
+												.title-style-1.title-left.trans-bdr-left
+													h2.text-uppercase  Contact
+													span.spt
+												p We are nec pellenesque nulla laoreet etuis.
+											//- / Section Title
+											ul.infoContact.wow.fadeInLeft(data-wow-delay='.2s', data-wow-duration='.8s')
+												li
+													span.icon.ion-home
+													| 4435 Berkshire Circle Knoxville TN 27912
+												li
+													span.icon.ion-iphone
+													span.number 879-890-9767
+												li
+													span.icon.ion-ios-email-outline
+													a(href='mailto:mail@mail.com') mail@mail.com
+							.split-section-content.pull-right
+								.row-padding.paddb0
+									#contact-form.contact-form-wrapper.contact-form-corp.wow.fadeInRight(data-wow-delay='.4s', data-wow-duration='.8s')
+										//- Contact Form
+										.map-overlay.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.clearfix
+											form#contactform.contact-form.clearfix(action='php/contact.php', method='post')
+												//- Input Field
+												.form-group
+													.visible.input-group
+														input#name.form-control(type='text', name='name', placeholder='Name')
+												//- / Input Field
+												//- Input Field
+												.form-group
+													.visible.input-group
+														input#email.form-control(type='text', name='email', placeholder='Email')
+												//- / Input Field
+												//- Input Field
+												.form-group
+													.visible.input-group
+														input#phone.form-control(type='text', name='phone', placeholder='Phone')
+												//- / Input Field
+												.noMP
+													.col-md-8.col-sm-12
+														//- Input Field
+														.form-group
+															.visible.input-group
+																textarea#comments.form-control(rows='3', name='comments', placeholder='Message')
+															//- / Input Field
+													.col-md-4.col-sm-7.col-xs-9
+														//- Input Field
+														.form-group.text-right
+															input.submit.text-uppercase(type='submit', value='Submit')
+														//- / Input Field
+										.clearfix
+								//- Map Toggle Button
+								.switch.dark
+									button.radio
+										span.icon.ion-android-pin
+								//- / Map Toggle Button
+								//- Google Map
+								#googleMap.clearfix
+								//- / Google Map
+							//- Left Image
+							.space-cover.bgColor1.leftAl.img-holder-2  
+							//- / Left Image
+				//- / Contact Section
+				//
+					Subscribe Section
+					––––––––––––––––––––––––––––––––––––––––––––––––––
+				section.clearfix.bgColor3
+					.container
+						.row.row-padding
+							.col-md-8.col-md-offset-2.text-center.wow.fadeIn(data-wow-delay='.4s', data-wow-duration='.8s')
+								p.font25.lh-nm Stay informed with our newsletter
+								h2.text-uppercase Subscribe now and get free stuff
+								.col-sm-8.col-sm-offset-2.marT30
+									form#mailchimp.form.align-center.subscribeForm(method='post', action='#')
+										.form-group.clearfix
+											.col-sm-8
+												input#email2.form-control.input-lg.marb30-xs(type='text', placeholder='Enter your mail', name='email')
+											.col-sm-4
+												button.btn.btn-theme.btn-md(type='submit')
+													span.fsize20 Subscribe
+										.form-tip.col-sm-12
+											p.lh-nm
+												i.fsize1-3.ion-ios-information-outline
+												|   Please trust us, we will never send you spam
+				//- / Subscribe Section
+			//- / Content Wrapper
+		//
+			Footer
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		footer#page_footer.clearfix.footer-black
+			.container.text-center
+				.row
+					//- Footer Copy
+					h5.copyright.text-uppercase
+						| COPYRIGHTS © 2014 DESIGN BY 
+						a(target='_blank', href='http://golothemes.com') GoloThemes
+					//- / Footer Copy
+					//- Footer Social Icon
+					ul.footer-socials.clearfix
+						li
+							a.foo_social(href='#')
+								i.fa.fa-facebook
+						li
+							a.foo_social(href='#')
+								i.fa.fa-twitter
+						li
+							a.foo_social(href='#')
+								i.fa.fa-google-plus
+						li
+							a.foo_social(href='#')
+								i.fa.fa-behance
+						li
+							a.foo_social(href='#')
+								i.fa.fa-pinterest
+					//- / Footer Social Icon
+		//- / Footer
+		//
+			Member Popup
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		#member-1.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-5.col-lg-5.no-padding
+							img.img-responsive(src='images/team/staff-1-big.jpg', alt='')
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase MICHAEL BOND
+							p.lead Art Director
+							ul.socials-connect
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-twitter
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-envelope
+							.content
+								p
+									| Aliquam lorem ligula, lacinia nec aliquam et, elementum accumsan dui. Nam id hendrerit neque, nec egestas enim. Sed rhoncus porta sapien ac viverra. nec egestas enim. Sed rhoncus porta sapien ac viverra nec egestas enim. Sed rhoncus porta sapien ac viverra
+								//- Progress bar
+								.progress-wrapper
+									h5 I AM GOOD AT
+									.skills.marT50
+										ul.skill-bar
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='80', data-name='Branding')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='92', data-name='Web Design')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='89', data-name='Graphic Design')  
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='75', data-name='Logo Design')  
+								//- / Progress bar
+		//
+			Member Popup
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		#member-2.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-5.col-lg-5.no-padding
+							img.img-responsive(src='images/team/staff-2-big.jpg', alt='')
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase Andrea Joe
+							p.lead Developer
+							ul.socials-connect
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-twitter
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-envelope
+							.content
+								p
+									| Aliquam lorem ligula, lacinia nec aliquam et, elementum accumsan dui. Nam id hendrerit neque, nec egestas enim. Sed rhoncus porta sapien ac viverra. nec egestas enim. Sed rhoncus porta sapien ac viverra nec egestas enim. Sed rhoncus porta sapien ac viverra
+								//- Progress bar
+								.progress-wrapper
+									h5 I AM GOOD AT
+									.skills.marT50
+										ul.skill-bar
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='80', data-name='Branding')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='92', data-name='Web Design')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='89', data-name='Graphic Design')  
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='75', data-name='Logo Design')  
+								//- / Progress bar
+		//
+			Member Popup
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		#member-3.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-5.col-lg-5.no-padding
+							img.img-responsive(src='images/team/staff-3-big.jpg', alt='')
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase James Anderson
+							p.lead Developer
+							ul.socials-connect
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-twitter
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-envelope
+							.content
+								p
+									| Aliquam lorem ligula, lacinia nec aliquam et, elementum accumsan dui. Nam id hendrerit neque, nec egestas enim. Sed rhoncus porta sapien ac viverra. nec egestas enim. Sed rhoncus porta sapien ac viverra nec egestas enim. Sed rhoncus porta sapien ac viverra
+								//- Progress bar
+								.progress-wrapper
+									h5 I AM GOOD AT
+									.skills.marT50
+										ul.skill-bar
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='80', data-name='Branding')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='92', data-name='Web Design')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='89', data-name='Graphic Design')  
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='75', data-name='Logo Design')  
+								//- / Progress bar
+		//
+			Member Popup
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		#member-4.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-5.col-lg-5.no-padding
+							img.img-responsive(src='images/team/staff-4-big.jpg', alt='')
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase MICHAEL BOND
+							p.lead Art Director
+							ul.socials-connect
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-twitter
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-envelope
+							.content
+								p
+									| Aliquam lorem ligula, lacinia nec aliquam et, elementum accumsan dui. Nam id hendrerit neque, nec egestas enim. Sed rhoncus porta sapien ac viverra. nec egestas enim. Sed rhoncus porta sapien ac viverra nec egestas enim. Sed rhoncus porta sapien ac viverra
+								//- Progress bar
+								.progress-wrapper
+									h5 I AM GOOD AT
+									.skills.marT50
+										ul.skill-bar
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='80', data-name='Branding')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='92', data-name='Web Design')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='89', data-name='Graphic Design')  
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='75', data-name='Logo Design')  
+								//- / Progress bar
+		//
+			Member Popup
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		#member-5.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-5.col-lg-5.no-padding
+							img.img-responsive(src='images/team/staff-5-big.jpg', alt='')
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase Andrea Joe
+							p.lead Developer
+							ul.socials-connect
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-twitter
+								li
+									a.page_social(title='', href='#')
+										i.fa.fa-envelope
+							.content
+								p
+									| Aliquam lorem ligula, lacinia nec aliquam et, elementum accumsan dui. Nam id hendrerit neque, nec egestas enim. Sed rhoncus porta sapien ac viverra. nec egestas enim. Sed rhoncus porta sapien ac viverra nec egestas enim. Sed rhoncus porta sapien ac viverra
+								//- Progress bar
+								.progress-wrapper
+									h5 I AM GOOD AT
+									.skills.marT50
+										ul.skill-bar
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='80', data-name='Branding')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='92', data-name='Web Design')
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='89', data-name='Graphic Design')  
+											li.active.progress.col-md-5
+												.skill-bar-wrap
+													.progress-bar.text-uppercase(data-width='75', data-name='Logo Design')  
+		
+								//- / Progress bar
+		#login.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase(style='text-align: center') Log In
+							p.lead All fields are required
+							#warning
+							.content
+								center
+									.form-group
+										.visible.input-group
+											input#strUsername.form-control(type='text', name='strUsername' placeholder='Username')
+										br
+										.visible.input-group
+											input#strPassword.form-control(type='password', name='strPassword', placeholder='Password')
+										br
+										a#loginButton.btn.btn-dark
+											span.cbp-l-loadMore-button-defaultText LOG IN
+										a
+											p.lead(id='signuplink' class="plus html-popup" href="#signup" style='cursor: pointer; color: #7ea4b3; font-size: 12px; letter-spacing: 0em !important;') Don't still have an account? Sign up here.
+		#signup.container.mfp-hide
+			.row
+				.member-details.col-lg-10.col-lg-offset-1(style='height:auto; min-height: 91%')
+					.row
+						button.mfp-close(title='Close (Esc)', type='button') x
+						.col-md-7.col-lg-7.padd25
+							h3.text-uppercase(style='text-align: center') Sign Up
+							p.lead 
+							center
+								form#basicBootstrapForm.form-horizontal(method="POST" action="/signup")
+									.form-group
+										label.col-xs-5.control-label License Number
+										.col-xs-7
+											.visible.input-group
+												input#strLicenseNo.form-control(type='text', name='strLicenseNo', placeholder='License Number')
+									.form-group
+										label.col-xs-5.control-label Username
+										.col-xs-7
+											.visible.input-group
+												input#strUsernameSignup.form-control(type='text', name='strUsername' placeholder='Username')
+									.form-group
+										label.col-xs-5.control-label Email address
+										.col-xs-7
+											.visible.input-group
+												input#strEmail.form-control(type='text', name='strEmail' placeholder='E-mail Address')
+									.form-group
+										label.col-xs-5.control-label Birthday
+										.col-xs-7
+											#datetimePicker.input-group.date
+												.visible.input-group
+													input#datBirthDate.form-control(type='text', name='datBirthDate', placeholder='YYYY-MM-DD')
+													span.input-group-addon
+														span.glyphicon.glyphicon-calendar
+
+									.form-group
+										.col-xs-12
+											.checkbox
+												label
+													input( type='checkbox', name='agree', value='agree')
+													|  Agree with the terms and conditions
+									.form-group
+										.col-xs-9.col-xs-offset-3(style="width: 55%;")
+											button.btn.btn-primary(type='submit', name='signup', value='Sign up') Submit
+
+									//- form#signupForm
+									//- 	.form-group
+									//- 		.visible.input-group
+									//- 			input#strLicenseNo.form-control(type='text', name='strLicenseNo' placeholder='License Number')
+									//- 		br
+									//- 		.visible.input-group
+									//- 			input#strEmail.form-control(data-tooltip='hello' type='email', name='strEmail', placeholder='E-mail Address')
+									//- 		br
+									//- 		.visible.input-group
+									//- 			input#strUsernameSign.form-control(type='text', name='strUsername', placeholder='Username', min='6')
+									//- 		br
+									//- 		a#loginButton.btn.btn-dark
+									//- 			span.cbp-l-loadMore-button-defaultText SIGN UP
+									//- 		a
+									//- 			p.lead(id='signuplink' style='cursor: pointer; color: #7ea4b3; font-size: 12px; letter-spacing: 0em !important;') Don't still have an account? Sign up here.
+
+
+		//- Script
+		script(type='text/javascript', src='js/jquery.min.js')
+		script(src='https://maps.googleapis.com/maps/api/js')
+		script(type='text/javascript', src='js/plugins/plugin.js')
+		script(type='text/javascript', src='js/custom.js')
+		script(type='text/javascript', src='js/styleswitcher.js')
+		script(type='text/javascript', src='js/datepicker.js')
+		script(type='text/javascript', src='js/formValidation.js')
+		script(type='text/javascript', src='js/bootstrap.min.js')
+		script(type='text/javascript', src='js/formValidation.js')
+		script(type='text/javascript', src='js/framework/bootstrap.js')
+		script(type='text/javascript', src='js/sweetalert.js')
+		script.
+			$(document).ready(function(){
+					$('#loginButton').click(function(){
+						$.post("/api/accounts",
+						{ strUsername: $('#strUsername').val(), strPassword: $('#strPassword').val() },
+						function(data,status){
+							if(data.accounts.strUsername == "")
+							$( "#warning" ).append('<div class="ui negative message" style="margin-bottom: 10px;"><i class="close icon"></i><p class="lead" style="color: maroon; font-size: 13px; letter-spacing: 0em; font-weight: bold;">Username or Password is incorrect</p></div>');
+							else
+							window.location.href = '/index'
+						});
+					});
+			})
+
+		script.
+			$(document).ready(function() {
+				// Generate a simple captcha
+				function randomNumber(min, max) {
+					return Math.floor(Math.random() * (max - min + 1) + min);
+				}
+				
+				$('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+				$('#basicBootstrapForm').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						strLicenseNo: {
+							validators: {
+								notEmpty: {
+									message: 'The License Number is required.'
+								},
+								regexp:{
+									regexp: /([A-Z]{1})+([0-9]{2})+(-)+([0-9]{2})+(-)+([0-9]{6})/,
+									message:'Incorrect Format. Ex: L02-12-123456'
+
+								},
+								remote: {
+									url: '/api/checkAccounts/license',
+									message: 'The license number has been taken, <a style="color: maroon; text-decoration: underline; font-weight: bold;" href="http://facebook.com"> Forgot Username and Password. </a>',
+									validKey: 'license',
+									type: 'POST'
+								},
+							}
+						},
+						
+						strUsername: {
+							validators: {
+								remote: {
+									url: '/api/checkAccounts/username',
+									message: 'The username is not available',
+									validKey: 'username',
+									type: 'POST'
+								},
+								notEmpty: {
+									message: 'The username is required'
+								},
+								stringLength: {
+									min: 6,
+									max: 30,
+									message: 'The username must be minimum of 6 characters and maximum of 30 characters.'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+								
+							}
+						},
+						strEmail: {
+							validators: {
+								notEmpty: {
+									message: 'The email address is required'
+								},
+								remote: {
+									url: '/api/checkAccounts/email',
+									message: 'The E-mail Address is not available',
+									validKey: 'email',
+									type: 'POST'
+								},
+								emailAddress: {
+									message: 'The input is not a valid email address'
+								}
+							}
+						},
+						datBirthDate: {
+							validators: {
+								date: {
+									format: 'YYYY-MM-DD',
+									message: 'The birthday is not valid'
+								},
+							}
+						},
+						agree: {
+							validators: {
+								notEmpty: {
+									message: 'You must agree with the terms and conditions',
+									icon: {
+										valid: 'none'
+									},
+								}
+							}
+						}
+					}
+				})
+				.on('success.form.fv', function(e) {
+					e.preventDefault();
+					var $form = $(e.target),
+						fv    = $(e.target).data('formValidation');
+					swal({
+						title: "Success",
+						text: "We are verifying your account, please check your e-mail from time-to-time.",
+						buttons: {
+							Okay: "Okay",
+						},
+						icon: 'success',
+					}).then((value) => {
+						if(value == "Okay"){
+							fv.defaultSubmit();
+						}
+					});
+				});
+			});
+			

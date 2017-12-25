@@ -1,0 +1,252 @@
+html
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+		meta(charset='utf-8')
+		title Isabel - Traffic Violation Management System
+		//- Core Meta Data
+		meta(name='author', content='Lacsina-Malibiran-Santuico')
+		meta(name='description', content='ENGAGE v1.0. Responsive One Page Theme.')
+		meta(name='keywords', content='Violation, MMDA, System, startup, Isabel, Traffic, Traffic Violation')
+		//- Loader
+		link(rel='stylesheet', href='css/preloader/preloader.css', type='text/css')
+		//- Framework Styles
+		link(rel='stylesheet', href='css/bootstrap/bootstrap.min.css', type='text/css')
+		//- Fonts Styles
+		link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Raleway:400,600,700,800', rel='stylesheet', type='text/css')
+		//- Icons Styles
+		link(rel='stylesheet', href='css/icons/font-awesome.min.css', type='text/css')
+		link(rel='stylesheet', href='css/icons/ionicons.min.css', type='text/css')
+		//- animation
+		link(rel='stylesheet', href='css/animate.css', type='text/css')
+		//- Venders Styles
+		link(rel='stylesheet', href='css/owl/owl.carousel.css', type='text/css')
+		link(rel='stylesheet', href='css/cubeportfolio/cubeportfolio.min.css', type='text/css')
+		link(rel='stylesheet', href='css/nav/navigation-top.css', type='text/css')
+		//- link(rel='stylesheet', href='css/scrollbar/jquery.mCustomScrollbar.css', type='text/css')
+		link(rel='stylesheet', href='css/popup/magnific-popup.css', type='text/css')
+		link(rel='stylesheet', href='css/animated-headlines/animated-headlines.css', type='text/css')
+		//- Default Styles
+		link(rel='stylesheet', href='css/styles.css', type='text/css')
+		//- link(rel='stylesheet', href='css/bootstrap.css')
+		link(rel='stylesheet', href='css/formValidation.css')
+		//- LESS stylesheet for managing color presets
+		link(rel='stylesheet', type='text/css', href='css/theme.css')
+		link#theme(rel='stylesheet', type='text/css', href='css/themes/sky-blue.css', data-color='')
+		//- Responsive Styles
+		link(rel='stylesheet', href='css/responsive.css', type='text/css')
+		link(rel='stylesheet', href='css/styleswitcher.css', type='text/css')
+		link(rel='stylesheet', href='css/message.css', type='text/css')
+		
+
+		style.
+			@media screen and (min-width: 1300px){
+				.mfp-content .container {
+					width: 400px;
+					height: auto;
+				}
+				.col-lg-7 {
+					width: 95.333333%;
+				}
+				.mfp-content{
+					text-align: center;
+				}
+				.btn-dark:hover, .btn-dark:active, .btn-dark:focus, .btn-dark:after, .btn-dark:active, .btn-dark:focus {
+					color: white;
+					background-color: #557f90;
+					border-color: #557f90;
+				}
+				.btn-dark{
+					border-color: #557f90;
+					color: #557f90;
+				}
+				.member-details .content {
+						height: 176px;
+						margin-bottom: 15px;
+				}
+				.dikit{
+					letter-spacing: 0em;
+					padding: 0;
+					color: darkred !important;
+					font-weight: bold !important;
+				}
+				#signuplink:hover{
+					text-decoration: underline;
+					font-weight: bold;
+				}
+				#signup{
+					width: 51% !important;
+				}
+				.form-group{
+					padding-bottom: 10%;
+				}
+			}
+
+	body#page.appear-animate(data-spy='scroll', data-target='.navbar-nav', data-offset='80')
+		//
+			Preloader
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		.ip-header
+			.ip-logo
+				img.preloaderLogo.img-responsive.center-block(src='images/logo/logo-black.png', alt='preloader')
+			.ip-loader
+				svg.ip-inner(width='60px', height='60px', viewbox='0 0 80 80')
+					path.ip-loader-circlebg(d='M40,10C57.351,10,71,23.649,71,41S57.351,71,41,71 S10,57.351,10,41S23.649,10,41,10z')
+					path#ip-loader-circle.ip-loader-circle(d='M40,10C57.351,10,71,23.649,71,41S57.351,71,41,71 S10,57.351,10,41S23.649,10,41,10z')
+		//- / Preloader
+		//
+			Style Changer
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		.sidePanel
+			#panelContent
+				h3 Choose a color
+				#style-changer.sliding-panel
+					ul.list-unstyled.colors-container
+						li.color-changer
+							a(data-color='dark-blue', title='blue: #5355ae', style='background: #5355ae;')
+						li.color-changer
+							a(data-color='red', title='green: #ed4343', style='background: #ed4343;')
+						li.color-changer
+							a(data-color='light-green', title='red: #59bb9d', style='background: #59bb9d;')
+						li.color-changer
+							a(data-color='golden', title='gold: #a79759', style='background: #a79759;')
+						li.color-changer
+							a(data-color='green', title='orange: #68b560', style='background: #68b560;')
+						li.color-changer
+							a(data-color='violet', title='purple: #9e66b9', style='background: #9e66b9;')
+						li.color-changer
+							a(data-color='sky-blue', title='olive: #1fa3bb', style='background: #1fa3bb;')
+						li.color-changer
+							a(data-color='blue', title='pink: #0a59aa', style='background: #0a59aa;')
+			#panelHandle
+				span.icon.ion-gear-b
+		//- Style Changer
+		//
+			Header
+			––––––––––––––––––––––––––––––––––––––––––––––––––
+		section#contact.parallax.clearfix.ipad-view.split.bgColor1(style="height: 100%" data-background='images/parallaxbg/13.jpg')
+			.parallax-overlay.bg-strip
+			.container-fluid
+				.row
+					.container.backDivLeft
+						.split-section-headings.pull-left
+							.row-padding
+								.col-md-10
+									//- Section Title
+									.heading.wow.fadeInLeft(data-wow-delay='.4s', data-wow-duration='.8s')
+										.title-style-1.title-left.trans-bdr-left
+											h2.text-uppercase  Authority
+											span.spt
+										p We are nec pellenesque nulla laoreet etuis.
+									//- / Section Title
+									ul.infoContact.wow.fadeInLeft(data-wow-delay='.2s', data-wow-duration='.8s')
+										li
+											span.icon.ion-home
+											| 4435 Berkshire Circle Knoxville TN 27912
+										li
+											span.icon.ion-iphone
+											span.number 879-890-9767
+										li
+											span.icon.ion-ios-email-outline
+											a(href='mailto:mail@mail.com') mail@mail.com
+					.split-section-content.pull-right
+						.row-padding.paddb0
+							#adminLogin.contact-form-wrapper.contact-form-corp.wow.fadeInRight(data-wow-delay='.4s', data-wow-duration='.8s')
+								//- Contact Form
+								.map-overlay.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.clearfix
+									#warning
+									form#adminLoginForm.contact-form.clearfix(action='/loginadmin', method='post')
+										//- Input Field
+										.form-group
+											label.col-xs-5.control-label(style="font-size: 20px; margin-top: 16px;") Username
+											.col-xs-7
+												.visible.input-group
+													input#strAuthorityUsername.form-control(type='text', name='strAuthorityUsername', placeholder='Username')
+										//- / Input Field
+										//- Input Field
+										.form-group
+											label.col-xs-5.control-label(style="font-size: 20px; margin-top: 16px;") Password
+											.col-xs-7
+												.visible.input-group
+													input#strAuthorityPassword.form-control(type='password', name='strAuthorityPassword', placeholder='Password')
+										//- / Input Field
+										.form-group
+											center
+												input#loginButton.submit.text-uppercase(type='submit', value='LOG IN')
+											
+								.clearfix
+						//- Map Toggle Button
+						.switch.dark
+							button.radio
+								span.icon.ion-android-pin
+						//- / Map Toggle Button
+						//- Google Map
+						#googleMap.clearfix
+						//- / Google Map
+					//- Left Image
+					.space-cover.bgColor1.leftAl.img-holder-2  
+					//- / Left Image
+		//- / Contact Section   
+		script(type='text/javascript', src='js/jquery.min.js')
+		script(src='https://maps.googleapis.com/maps/api/js')
+		script(type='text/javascript', src='js/plugins/plugin.js')
+		script(type='text/javascript', src='js/custom.js')
+		script(type='text/javascript', src='js/styleswitcher.js')
+		script(type='text/javascript', src='js/datepicker.js')
+		script(type='text/javascript', src='js/formValidation.js')
+		script(type='text/javascript', src='js/bootstrap.min.js')
+		script(type='text/javascript', src='js/formValidation.js')
+		script(type='text/javascript', src='js/framework/bootstrap.js')
+		script(type='text/javascript', src='js/sweetalert.js')
+		script.
+			$(document).ready(function(){
+
+
+				$('#adminLoginForm').formValidation({
+					framework: 'bootstrap',
+					fields: {
+						strAuthorityUsername: {
+							validators: {
+								notEmpty: {
+									message: 'The Username is Required'
+								},
+							}
+						},
+						
+						strAuthorityPassword: {
+							validators: {
+								notEmpty: {
+									message: 'The Password is required'
+								},
+								
+							}
+						},
+					}
+				})
+				.on('success.form.fv', function(e) {
+					e.preventDefault();
+					var $form = $(e.target),
+						fv    = $(e.target).data('formValidation');
+					$.post('/loginadmin', {
+						strAuthorityUsername: $("#strAuthorityUsername").val(),
+						strAuthorityPassword: $("#strAuthorityPassword").val(),
+					}, function(data, status){
+							if(data ==  ""){
+							$( "#warning" ).empty();
+							$( "#warning" ).append('<div class="ui negative message" style="margin-bottom: 10px;"><i class="close icon"></i><p class="lead" style="color: maroon; font-size: 13px; letter-spacing: 0em; font-weight: bold;">Username or Password is incorrect</p></div>');
+							}
+							else{
+								if(data.booAuthorityUserType == 1){
+									window.location.href = '/admin';
+								}
+								else if(data.booAuthorityUserType == 2){
+									window.location.href = '/enforcer';
+								}
+							}
+							
+						});
+					
+
+				})
+				
+			})
