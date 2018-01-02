@@ -115,6 +115,29 @@ html.no-js(lang='en')
 			.loader-circle
 		// END PRELOADER
 		#wrapper
+			aside#aside-nav
+				#main-aside-navigation
+					.main-nav-wrapper
+						.close-aside-nav
+							i.nc-icon-outline.ui-1_simple-remove
+						#aside-logo
+							a(href='#', data-logo-light='assets/img/logo/logo-aside-light.png', data-logo-dark='assets/img/logo/logo-aside-dark.png')
+								img(width='170', height='166', src='assets/img/logo/logo-aside-dark.png', alt='logo')
+						nav#main-aside-menu
+							ul
+								li.submenu
+									li.active(data-menuanchor='home')
+										a(href='#home') Home
+									li(data-menuanchor='services')
+										a(href='#services') Services
+									li(data-menuanchor='team')
+										a(href='#team') Team
+									li(data-menuanchor='contact')
+										a(href='#contact') Contact
+									li(data-menuanchor='signup')
+										a(href='#signup') Sign up
+									li(data-menuanchor='')
+										a#loginNav(href='#' class='open-modal-login') Log in
 			// BEGIN MAIN NAVIGATION
 			header#header
 				#main-navigation
@@ -137,7 +160,12 @@ html.no-js(lang='en')
 										li(data-menuanchor='signup')
 											a(href='#signup') Sign up
 										li(data-menuanchor='')
-											a(href='#' class='open-modal-login') Log in
+											a#loginNav(href='#' class='open-modal-login') Log in
+								ul.nav-tools
+									li.mobile-menu-btn
+										button.toggle-menu(data-toggle='mobile-menu', data-effect='hover')
+											span.menu-label.label-left Menu
+											i.nc-icon-outline.ui-2_menu-35
 			// END MAIN NAVIGATION
 			// BEGIN MAIN CONTENT
 			#main-content
@@ -309,15 +337,19 @@ html.no-js(lang='en')
 						h3.m-t-0.t-center Login to my account
 						#warning
 						.m-t-30.t-center
-							.form-group
-								label Username
-								input#strUsername.form-control(type='text', name='strUsername' placeholder='Username')
-							.form-group
-								label Password
-								input#strPassword.form-control(type='password', name='strPassword', placeholder='Password')
-							a#loginButton.btn.btn-primary.btn-block
-								strong(style="es-weight: bold") LOGIN
-						p.lead(id='signuplink' href="#signup" class='open-modal-register' style='text-align: center; cursor: pointer; color: #7ea4b3; font-size: 15px; letter-spacing: 0em !important;') Don't still have an account? Sign up here.
+							form#loginForm
+								.form-group
+									label Username
+									-if(username)
+										input#strUsername.form-control(type='text', name='strUsername' placeholder='Username' value=username)
+									-else 
+										input#strUsername.form-control(type='text', name='strUsername' placeholder='Username')
+								.form-group
+									label Password
+									input#strPassword.form-control(type='password', name='strPassword', placeholder='Password')
+								a#loginButton.btn.btn-primary.btn-block
+									strong(style="es-weight: bold") LOGIN
+							p.lead(id='signuplink' href="#signup" class='open-modal-register' style='text-align: center; cursor: pointer; color: #7ea4b3; font-size: 15px; letter-spacing: 0em !important;') Don't still have an account? Sign up here.
 		// END MODAL LOGIN
 
 		// BEGIN MODAL REGISTER
@@ -412,6 +444,42 @@ html.no-js(lang='en')
 		script(type='text/javascript', src='js/sweetalert.js')
 		script.
 			$(document).ready(function(){
+				var usernameForLogin = '!{username}';
+				if(usernameForLogin){
+					$('#loginNav').trigger('click');
+				}
+			});
+		script.
+			$(document).ready(function(){
+				var hasQuery = '!{query}';
+				console.log(hasQuery);
+
+					$('#loginForm').formValidation({
+						framework: 'bootstrap',
+						icon: {
+							valid: 'glyphicon glyphicon-ok',
+							invalid: 'glyphicon glyphicon-remove',
+							validating: 'glyphicon glyphicon-refresh'
+						},
+						fields: {
+							strUsername: {
+								validators: {
+									notEmpty: {
+										message: 'Please enter your username.'
+									},
+								}
+							},
+							
+							strPassword: {
+								validators: {
+									notEmpty: {
+										message: 'Please enter your password'
+									},
+								}
+							},					
+						}
+					})
+
 					$('#loginButton').click(function(){
 						$.post("/api/accounts",
 						{ strUsername: $('#strUsername').val(), strPassword: $('#strPassword').val() },
@@ -424,8 +492,22 @@ html.no-js(lang='en')
 							window.location.href = '/index'
 						});
 					});
+					$('#loginForm').submit(function(e){
+						e.preventDefault();
+						$('#loginButton').trigger('click');
+					});
+
+					if(hasQuery == '9is0dha8hd546y4trht2yhr4wy4'){
+						swal({
+							title: 'ERROR 404',
+							icon: 'error',
+							text: 'Link Not Found.',
+							button: 'Okay',
+						})
+					}
 			})
 		script.
+			
 			$(document).ready(function() {
 				// Generate a simple captcha
 				function randomNumber(min, max) {

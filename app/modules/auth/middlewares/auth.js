@@ -11,6 +11,7 @@ exports.noAuthed = (req, res, next) => {
 
 exports.noAuthedAuthority = (req, res, next) => {
     if (req.session && req.session.authority && Object.keys(req.session.authority).length > 0 && req.session.authority.booAuthorityUserType == 1) return res.redirect('/admin')
+    if (req.session && req.session.authority && Object.keys(req.session.authority).length > 0 && req.session.authority.booAuthorityUserType == 2) return res.redirect('/enforcer')
     return next();
 }
 

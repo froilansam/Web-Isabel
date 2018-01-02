@@ -1,0 +1,320 @@
+doctype html
+//if lt IE 7
+	html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')
+//if IE 7
+	html.no-js.lt-ie9.lt-ie8(lang='')
+//if IE 8
+	html.no-js.lt-ie9(lang='')
+// [if gt IE 8] <!
+html.no-js(lang='en')
+	// <![endif]
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title Login | Engage Html Template
+		meta(name='description', content='Create your website using Engage multipurposes html template: corporate, ecommerce, blog, creative and much more. Only $17 for unlimited possibilities.')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='apple-touch-icon', href='../assets/img/various/apple-touch-icon.png')
+		link(rel='shortcut icon', href='../assets/img/favicon.ico', type='image/x-icon')
+		link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300,400,700,800', rel='stylesheet')
+		link(rel='stylesheet', href='../assets/js/libs/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='../assets/js/libs/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='../assets/css/icons/nucleo.css')
+		link(rel='stylesheet', href='../assets/js/libs/animate.css/animate.min.css')
+		// BEGIN PAGE STYLE
+		link(rel='stylesheet', href='../assets/css/form.css')
+		link(rel='stylesheet', href='../assets/css/pages.css')
+		// END PAGE STYLE
+		link(rel='stylesheet', href='../assets/css/buttons.css')
+		link(rel='stylesheet', href='../assets/css/builder.css')
+		link(rel='stylesheet', href='../assets/css/colors.css')
+		link(rel='stylesheet', href='../assets/css/footers.css')
+		link(rel='stylesheet', href='../assets/css/main.css')
+		link(rel='stylesheet', href='../assets/css/nav.css')
+		link(rel='stylesheet', href='../assets/css/preloader.css')
+		link(rel='stylesheet', href='../assets/css/themes.css')
+		link(rel='stylesheet', href='../assets/css/ui.css')
+		link(rel='stylesheet', href='../assets/css/widgets.css')
+		script(src='../assets/js/modernizr-2.8.3-respond-1.4.2.min.js')
+	body.header-light
+		//if lt IE 8
+			p.browserupgrade
+				| You are using an 
+				strong outdated
+				|  browser. Please 
+				a(href='http://browsehappy.com/') upgrade your browser
+				|  to improve your experience.
+		// BEGIN PRELOADER
+		.loader-wrapper
+			.loader-circle
+		// END PRELOADER
+		#wrapper
+			aside#aside-nav
+				#main-aside-navigation
+					.main-nav-wrapper
+						.close-aside-nav
+							i.nc-icon-outline.ui-1_simple-remove
+						#aside-logo
+							a(href='#', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-aside-dark.png')
+								img(width='170', height='166', src='../assets/img/logo/logo-short-dark.png', alt='logo')
+						nav#main-aside-menu
+							ul
+								li.submenu
+									a(href='#') Dashboard
+									ul
+										li
+											a.menu-title(href='#') Traffic Offenses
+										li
+											a.menu-title(href='#') Payments
+								li.submenu
+									a(href='#') #{user.strLicenseFirstName} #{user.strLicenseLastName}
+									ul
+										li
+											a(href='fullscreen-image') My Account
+										li
+											a(href='fullscreen-image-parallax') Settings
+										li
+											a(href='/logout') Log out
+						footer
+							a.tools-btn(href='#', data-toggle-search='fullscreen')
+								span.tools-btn-icon
+									i.nc-icon-outline.ui-1_zoom
+							a.tools-btn(href='shop-wishlist')
+								span.tools-btn-icon
+									i.nc-icon-outline.ui-2_favourite-28
+								span.wishlist_items_number 0
+							a.tools-btn(href='shopping-cart')
+								span.tools-btn-icon
+									i.nc-icon-glyph.shopping_bag-16
+								span.cart_items_number 0
+			// END LATERAL NAVIGATION
+			// BEGIN MAIN NAVIGATION
+			header#header
+				#main-navigation.submenu-dark
+					.main-nav-wrapper
+						.container-fluid
+							.nav-left
+								#logo
+									a(href='overview', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-short-dark.png')
+										img(width='145', height='36', src='../assets/img/logo/logo-light.png', alt='logo')
+							.nav-right
+								nav#main-menu
+									ul
+										li
+											a(href='#') Dashboard
+											ul
+												li
+													a.menu-title(href='#') Traffic Offenses
+												li
+													a.menu-title(href='#') Payments
+										li
+											a(href='#') 
+												img#smallIcon(src=`../uploads/${user.strImage}`)
+												|   #{user.strLicenseFirstName} #{user.strLicenseLastName}
+											ul
+												li
+													a(href='fullscreen-image') My Account
+												li
+													a(href='fullscreen-image-parallax') Settings
+												li
+													a(href='/logout') Log out
+								ul.nav-tools
+									li.mobile-menu-btn
+										button.toggle-menu(data-toggle='mobile-menu', data-effect='hover')
+											span.menu-label.label-left Menu
+											i.nc-icon-outline.ui-2_menu-35
+
+	
+			// BEGIN MAIN CONTENT
+			#main-content
+				// BEGIN HEADER
+				header.section-header.header-sm.t-dark
+					.container.top-element
+						.row.top-text
+							i.nc-icon-outline.ui-1_lock-circle.header-icon
+							h1.header-title.t-important.m-b-0 Login
+				// END HEADER
+				// BEGIN LOGIN
+				.section.container
+					.row
+						.col-md-6.offset-md-3
+							.m-b-100
+								form
+									.form-group
+										label Email
+										.prepend-icon
+											input.form-control.input-lg(type='email', placeholder='Enter your email')
+											i.nc-icon-outline.ui-1_email-83
+									.form-group
+										label Password
+										.prepend-icon
+											input.form-control.input-lg(type='password', placeholder='Enter your password')
+											i.nc-icon-outline.ui-1_lock-circle
+									button.btn.btn-lg.m-t-30.btn-important.btn-primary.btn-block(type='submit') LOGIN
+								.m-t-20.p-b-50.clearfix
+									a(href='password-recover') Forgot password?
+									a.pull-right(href='register') Create my account
+				// END LOGIN
+			// END MAIN CONTENT
+			// BEGIN FOOTER
+			footer#footer
+				#footer-main.container-large
+					.row
+						.col-lg-3.col-md-6
+							.widget.widget-text
+								h3.widget-title Who are we?
+								img.footer-logo(width='200', height='50', src='../assets/img/logo/logo-light.png', alt='logo')
+								p We are digital agency specialized in web design and modern style.
+								p
+									i.nc-icon-outline.ui-1_home-minimal
+									|  Pennsylvania Plaza, New York, NY 10119
+								p
+									i.nc-icon-outline.ui-1_email-85
+									a(href='mailto:support@themes-lab.com') support@themes-lab.com
+								p
+									i.nc-icon-outline.tech_mobile
+									a(href='tel:+1-888-541-7871', data-toggle='tooltip', data-placement='bottom', title='', data-original-title='Call us Now')  +1-888-541-7871
+						.col-lg-3.col-md-6.hidden-md-down
+							.widget.widget-links
+								.widget-title
+									h3.widget-title Informations
+								ul
+									li
+										a(href='overview') Overview
+									li
+										a(href='overview') Features
+									li
+										a(href='overview') Layouts
+									li
+										a(href='_documentation/') Documentation
+									li
+										a(href='homepage-shop-snow') Ecommerce
+									li
+										a(href='terms-conditions') Terms & Conditions
+						.col-lg-3.col-md-6.hidden-md-down
+							.widget.widget-twitter(data-count='6')
+								h3.widget-title Latest Tweets
+								.tweets-list
+									ul
+						.col-lg-3.col-md-6.hidden-sm-down
+							.widget.widget-flickr.flickr-demo(data-count='12', data-user='36587311@N08')
+								h3.widget-title Flickr Photos
+								ul.flickr-list
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-1.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-2.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-3.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-9.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-10.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-11.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-12.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-13.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-14.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-15.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-16.jpg')
+									li
+										img(width='100', height='100', alt='flickr', src='../assets/img/nature/small-17.jpg')
+				#footer-bottom
+					.container-large
+						.row
+							.col-sm-12.t-center
+								p.copyright © Themes Lab 2016. All Rights Reserved.
+			// END FOOTER
+		// BEGIN OFF FULLSCREEN SEARCH
+		.search-overlay.overlay-dark
+			a.search-overlay-close(href='#')
+				i.nc-icon-outline.ui-1_simple-remove
+			form(action='search-result', method='post')
+				input(type='search', placeholder='Search...')
+				button(type='submit')
+					i.nc-icon-outline.ui-1_zoom-split
+		// END OFF FULLSCREEN SEARCH
+		// BEGIN BUILDER
+		#builder.builder.hidden-sm-down
+			a.builder-toggle
+				i.nc-icon-outline.ui-1_settings-gear-65
+			.inner
+				.builder-container
+					.builder-section.builder-buy
+						a.btn.btn-primary.btn-block.t-important(href='#') Buy Engage
+						a#reset-style(href='#') reset style
+					.builder-section.builder-layout
+						h4 Layout
+						.btn.btn-dark.btn-bordered.t-important(data-layout='boxed') BOXED
+						.btn.btn-dark.t-important(data-layout='wide') WIDE
+						.builder-boxed-bg
+							h4 Boxed Background
+							.row
+								.col-xs-12.custom-bg-background
+									.boxed-bg(data-bg-img='bg/pattern/3.png')
+									.boxed-bg(data-bg-img='bg/pattern/2.png')
+									.boxed-bg(data-bg-img='creative/full-18.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='creative/full-4.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='nature/full-20.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='nature/full-42.jpg', data-pattern='false')
+					.builder-section.builder-menu-layout
+						h4 Menu Style
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='lateral') Lateral
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='overlay') Overlay
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='offcanvas') Offcanvas
+							a.btn.btn-dark.t-important(href='#', data-menu='right-align') Right align
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='left-align') Left align
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='logo-center') Logo center
+					.builder-section.builder-menu-style
+						h4 Menu Color
+						div
+							a.btn.btn-dark.t-important(href='#', data-menu-style='transparent') Transparent
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='image') Image
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='dark') Dark
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='light') Light
+					.builder-section.builder-footer
+						h4 Footer
+						.btn.btn-dark.t-important(data-footer='normal') Normal
+						.btn.btn-dark.btn-bordered.t-important(data-footer='reveal') Reveal
+					.builder-section.builder-themes
+						h4 Theme Colors
+						.row
+							.col-xs-12
+								.theme-color.blue.lighten-2(data-theme='blue')
+								.theme-color.indigo.lighten-2(data-theme='indigo')
+								.theme-color.deep-purple.lighten-2(data-theme='purple')
+								.theme-color.teal.lighten-2(data-theme='teal')
+								.theme-color.amber(data-theme='amber')
+								.theme-color.deep-orange.lighten-1.active(data-theme='default')
+								.theme-color.red.lighten-1(data-theme='red')
+								.theme-color.grey.darken-4(data-theme='dark')
+					.builder-section.builder-dark-theme
+						.btn.btn-dark.btn-block.t-important(data-skin='dark') Dark Theme
+		// END BUILDER
+		a.scrollup(href='#')
+			i.nc-icon-outline.arrows-1_minimal-up
+		script(src='../assets/js/libs/jquery/dist/jquery.min.js')
+		script(src='../assets/js/libs/jquery-ui/jquery-ui.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/TweenMax.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
+		script(src='../assets/js/libs/tether/dist/js/tether.min.js')
+		script(src='../assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
+		script(src='../assets/js/libs/superfish/dist/js/superfish.min.js')
+		script(src='../assets/js/libs/appear/jquery.appear.js')
+		script(src='../assets/js/libs/skrollr/dist/skrollr.min.js')
+		script(src='../assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js')
+		// BEGIN PAGE SCRIPT
+		script(src='../assets/js/widgets.js')
+		// END PAGE SCRIPT
+		script(src='../assets/js/navigation.js')
+		script(src='../assets/js/search.js')
+		script(src='../assets/js/builder.js')
+		script(src='../assets/js/main.js')

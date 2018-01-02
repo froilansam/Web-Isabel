@@ -11,26 +11,20 @@ var authMiddleware = require('./middlewares/auth');
 
 loginRouter.route('/')
     .get(authMiddleware.noAuthed, (req, res) => {
-        res.render('auth/views/login', req.query);
+        if(req.query.dstn){
+            const queryForLog = `SELECT strUsername, strPassword FROM tbluser WHERE PASSWORD(strUsername) = ?`
+            db.query(queryForLog, [req.query.dstn], (err, results, fields) => {
+                if(err) return console.log(err);
+                console.log(results[0])
+                if(results.length > 0 && (results[0].strPassword != null))
+                    res.render('auth/views/login', { username: results[0].strUsername });
+                else
+                    res.redirect('/login?x=9is0dha8hd546y4trht2yhr4wy4');
+            });
+        }
+        else
+            res.render('auth/views/login', { query: req.query.x });
     })
-    .post((req, res) => {
-        
-
-        db.query(`SELECT * FROM users WHERE email="${req.body.email}"`, (err, results, fields) => {
-            if (err) throw err;
-            if (results.length === 0) return res.redirect('/login?incorrect');
-
-            var user = results[0];
-
-            if (user.password !== req.body.password) return res.redirect('/login?incorrect');
-
-            delete user.password;
-
-            req.session.user = user;
-
-            return res.redirect('/index');
-        });
-    });
 
 logoutRouter.get('/', (req, res) => {
     req.session.destroy(err => {
@@ -574,7 +568,7 @@ a[x-apple-data-detectors=true] {
                         let mailOptions = {
                             from: '"Isabel Team" <contact@isabel.com>', // sender address
                             to: req.body.strEmail, // list of receivers
-                            subject: 'Isabel - Hello, '+user.strLicenseFirstName+' '+userstrLicenseLastName+', you have been verified!', // Subject line
+                            subject: 'Isabel - Hello, '+user.strLicenseFirstName+' '+user.strLicenseLastName+', you have been verified!', // Subject line
                             html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
                         <!--[if gte mso 9]><xml>
                         <o:OfficeDocumentSettings>
@@ -926,7 +920,7 @@ a[x-apple-data-detectors=true] {
                                         
                     <div align="center" class="button-container center" style="padding-right: 10px; padding-left: 10px; padding-top:15px; padding-bottom:10px;">
                     <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top:15px; padding-bottom:10px;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:31pt; v-text-anchor:middle; width:94pt;" arcsize="60%" strokecolor="#C7702E" fillcolor="#C7702E"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#ffffff; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:16px;"><![endif]-->
-                        <a href="http://`+req.hostname+`:3009/setup/u=` + hashURL +`" style="padding: 20px; color: white; background-color: transparent; text-align: center; border: 2px solid #ffffff; text-transform: uppercase; font-weight: bold; letter-spacing: 0.2em;">
+                        <a href="http://`+req.hostname+`:3009/setup?u=` + hashURL +`" style="padding: 20px; color: white; background-color: transparent; text-align: center; border: 2px solid #ffffff; text-transform: uppercase; font-weight: bold; letter-spacing: 0.2em;">
                         <span style="font-size:16px;line-height:32px;"><span style="font-size: 14px; line-height: 28px;" data-mce-style="font-size: 14px;">Get Started</span></span>
                         </a>
                     <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
@@ -1546,8 +1540,8 @@ a[x-apple-data-detectors=true] {
 
 
 
-adminRouter.get('/', authMiddleware.noAuthedAuthority, (req, res) => {
-    res.render('auth/views/loginadmin');
+adminRouter.get('/', authMiddleware.noAuthedAuthority , (req, res) => {
+    res.render('auth/views/loginadmintemp');
 });
 
 adminRouter.post('/', (req, res) => {
