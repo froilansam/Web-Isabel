@@ -117,29 +117,25 @@ html.no-js(lang='en')
 						.container-fluid
 							.nav-left
 								#logo
-									a(href='overview', data-logo-light='assets/img/logo/logo-short-light.png', data-logo-dark='assets/img/logo/logo-short-dark.png')
-										img(width='145', height='36', src='assets/img/logo/logo-light.png', alt='logo')
+									a(href='overview', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-short-dark.png')
+										img(width='145', height='36', src='../assets/img/logo/logo-light.png', alt='logo')
 							.nav-right
 								nav#main-menu
 									ul
 										li
-											a(href='#') Dashboard
-											ul
-												li
-													a.menu-title(href='#') Traffic Offenses
-												li
-													a.menu-title(href='#') Payments
+											a(href='/index/dashboard') Dashboard
+											
 										li
 											a(href='#') 
-												img#smallIcon(src=`uploads/${user.strImage}`)
+												img#smallIcon(src=`../uploads/${user.strImage}`)
 												|   #{user.strLicenseFirstName} #{user.strLicenseLastName}
 											ul
 												li
-													a(href='fullscreen-image') My Account
+													a(href='/index') My Account
 												li
-													a(href='fullscreen-image-parallax') Settings
+													a(href='/index/settings') Settings
 												li
-													a(href='fullscreen-video') Log out
+													a(href='/logout') Log out
 								ul.nav-tools
 									li.mobile-menu-btn
 										button.toggle-menu(data-toggle='mobile-menu', data-effect='hover')

@@ -11,7 +11,7 @@ html.no-js(lang='en')
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		title Profile | #{user.strLicenseFirstName} #{user.strLicenseLastName} 
+		title License | #{user.strLicenseFirstName} #{user.strLicenseLastName} 
 		meta(name='description', content='Create your website using Engage multipurposes html template: corporate, ecommerce, blog, creative and much more. Only $17 for unlimited possibilities.')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='apple-touch-icon', href='../assets/img/various/apple-touch-icon.png')
@@ -123,21 +123,17 @@ html.no-js(lang='en')
 								nav#main-menu
 									ul
 										li
-											a(href='#') Dashboard
-											ul
-												li
-													a.menu-title(href='#') Traffic Offenses
-												li
-													a.menu-title(href='#') Payments
+											a(href='/index/dashboard') Dashboard
+											
 										li
 											a(href='#') 
 												img#smallIcon(src=`../uploads/${user.strImage}`)
 												|   #{user.strLicenseFirstName} #{user.strLicenseLastName}
 											ul
 												li
-													a(href='fullscreen-image') My Account
+													a(href='/index') My Account
 												li
-													a(href='fullscreen-image-parallax') Settings
+													a(href='/index/settings') Settings
 												li
 													a(href='/logout') Log out
 								ul.nav-tools
@@ -189,16 +185,14 @@ html.no-js(lang='en')
 										.col-lg-12
 											.form-group.form-grouped
 												label Status
-												-if(user.booStatus == '1')
+												-if(answer == 0)
 													input#status.form-control(disabled style='cursor: pointer;' type='text' value='No Violation/s')
-												-else if(user.booStatus == '2')
+												-else if(answer!=0)
 													small(style="color: red") 
 														a(style="text-decoration: underline; cursor: pointer") See Offense Here
-													input#status.form-control(disabled style='cursor: pointer;' type='text' value='Caught')
-												-else if(user.booStatus =='3')
-													input#status.form-control(disabled style='cursor: pointer;' type='text' value='On Release')
+													input#status.form-control(disabled style='cursor: pointer;' type='text' value=answer+" Offenses")
 
-									-if(user.strLocation == 'Owner')
+									-if(answer == 0)
 										.row
 											.col-lg-12
 												.form-group.form-grouped
@@ -210,7 +204,7 @@ html.no-js(lang='en')
 											.col-lg-12
 												.form-group.form-grouped
 													label Location
-													input#address.form-control(disabled style='cursor: pointer;' type='text' value=user.strLocation)
+													input#address.form-control(disabled style='cursor: pointer;' type='text' value="Marikina City Engineering Office")
 												#map-dark.map(data-map-width='100%', data-map-height='100%', data-markers='none', data-map-style='black-white', data-plugin-options='{"zoom":3,"panControl":false,"mapTypeControl":false,"zoomControl":false}')
 			// END MAIN CONTENT
 			// BEGIN FOOTER

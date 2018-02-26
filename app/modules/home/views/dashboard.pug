@@ -11,37 +11,37 @@ html.no-js(lang='en')
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		title Welcome | Admin
+		title Dashboard | Isabel
 		meta(name='description', content='Create your website using Engage multipurposes html template: corporate, ecommerce, blog, creative and much more. Only $17 for unlimited possibilities.')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		link(rel='apple-touch-icon', href='assets/img/various/apple-touch-icon.png')
-		link(rel='shortcut icon', href='assets/img/favicon.ico', type='image/x-icon')
+		link(rel='apple-touch-icon', href='../assets/img/various/apple-touch-icon.png')
+		link(rel='shortcut icon', href='../assets/img/favicon.ico', type='image/x-icon')
 		link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300,400,700,800', rel='stylesheet')
-		link(rel='stylesheet', href='assets/js/libs/font-awesome/css/font-awesome.min.css')
-		link(rel='stylesheet', href='assets/js/libs/bootstrap/dist/css/bootstrap.min.css')
-		link(rel='stylesheet', href='assets/css/icons/nucleo.css')
-		link(rel='stylesheet', href='assets/js/libs/animate.css/animate.min.css')
+		link(rel='stylesheet', href='../assets/js/libs/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='../assets/js/libs/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='../assets/css/icons/nucleo.css')
+		link(rel='stylesheet', href='../assets/js/libs/animate.css/animate.min.css')
 		// BEGIN PAGE STYLE
-		link(rel='stylesheet', href='assets/js/libs/select2/dist/css/select2.min.css')
-		link(rel='stylesheet', href='assets/js/libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')
-		link(rel='stylesheet', href='assets/js/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')
-		link(rel='stylesheet', href='assets/js/plugins/revolution-slider/revolution/css/settings.css')
-		link(rel='stylesheet', href='assets/js/plugins/revolution-slider/revolution/css/navigation.css')
-		link(rel='stylesheet', href='assets/css/sliders.css')
-		link(rel='stylesheet', href='assets/css/pages.css')
-		link(rel="stylesheet" href="assets/js/plugins/slick-modal/sm-minified.css")
-		link(rel='stylesheet', href='assets/css/form.css')
+		link(rel='stylesheet', href='../assets/js/libs/select2/dist/css/select2.min.css')
+		link(rel='stylesheet', href='../assets/js/libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')
+		link(rel='stylesheet', href='../assets/js/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')
+		link(rel='stylesheet', href='../assets/js/plugins/revolution-slider/revolution/css/settings.css')
+		link(rel='stylesheet', href='../assets/js/plugins/revolution-slider/revolution/css/navigation.css')
+		link(rel='stylesheet', href='../assets/css/sliders.css')
+		link(rel='stylesheet', href='../assets/css/pages.css')
+		link(rel="stylesheet" href="../assets/js/plugins/slick-modal/sm-minified.css")
+		link(rel='stylesheet', href='../assets/css/form.css')
 		// END PAGE STYLE
-		link(rel='stylesheet', href='assets/css/buttons.css')
-		link(rel='stylesheet', href='assets/css/builder.css')
-		link(rel='stylesheet', href='assets/css/colors.css')
-		link(rel='stylesheet', href='assets/css/footers.css')
-		link(rel='stylesheet', href='assets/css/main.css')
-		link(rel='stylesheet', href='assets/css/nav.css')
-		link(rel='stylesheet', href='assets/css/preloader.css')
-		link(rel='stylesheet', href='assets/css/themes.css')
-		link(rel='stylesheet', href='assets/css/ui.css')
-		link(rel='stylesheet', href='assets/css/widgets.css')
+		link(rel='stylesheet', href='../assets/css/buttons.css')
+		link(rel='stylesheet', href='../assets/css/builder.css')
+		link(rel='stylesheet', href='../assets/css/colors.css')
+		link(rel='stylesheet', href='../assets/css/footers.css')
+		link(rel='stylesheet', href='../assets/css/main.css')
+		link(rel='stylesheet', href='../assets/css/nav.css')
+		link(rel='stylesheet', href='../assets/css/preloader.css')
+		link(rel='stylesheet', href='../assets/css/themes.css')
+		link(rel='stylesheet', href='../assets/css/ui.css')
+		link(rel='stylesheet', href='../assets/css/widgets.css')
 		style.
 			.map {
 				height: 413%;
@@ -82,9 +82,9 @@ html.no-js(lang='en')
 			#paymentButton:hover::after{
 			width: 100%;
 			}
-		script(src='assets/js/modernizr-2.8.3-respond-1.4.2.min.js')
+		script(src='../assets/js/modernizr-2.8.3-respond-1.4.2.min.js')
 		script(src='//code.jquery.com/jquery-2.1.3.min.js')
-		script(src='assets/js/jquery.twbsPagination.js')
+		script(src='../assets/js/jquery.twbsPagination.js')
 		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
 		script.
 			function puta(){
@@ -93,7 +93,7 @@ html.no-js(lang='en')
 					var ticket = {}
 					var ticketLength =  null;
 					var filter = $('#filter').val();
-					$.post('/admin/violation', {isPaid: filter})
+					$.post('/index/violation', {isPaid: filter})
 					.done(function(data){
 						ticket = data.violations;
 						ticketLength = ticket.length;
@@ -104,7 +104,7 @@ html.no-js(lang='en')
 						visiblePages: 5,
 						onPageClick: function (event, page) {
 							alert('e1')
-							$.post('/admin/vio', {intPage: pages, intStart: ((page-1)*pages), isPaid: filter, sortie: $('#sort').val()})
+							$.post('/index/vio', {intPage: pages, intStart: ((page-1)*pages), isPaid: filter, sortie: $('#sort').val()})
 							.done(function(data){
 								alert('entered2')
 								var vio = data.vio;
@@ -268,39 +268,26 @@ html.no-js(lang='en')
 		#wrapper
 			// BEGIN LATERAL NAVIGATION
 			aside#aside-nav
-				
 				#main-aside-navigation
 					.main-nav-wrapper
 						.close-aside-nav
 							i.nc-icon-outline.ui-1_simple-remove
 						#aside-logo
-							a(href='#', data-logo-light='assets/img/logo/logo-short-light.png', data-logo-dark='assets/img/logo/logo-aside-dark.png')
-								img(width='170', height='166', src='assets/img/logo/logo-short-dark.png', alt='logo')
+							a(href='#', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-aside-dark.png')
+								img(width='170', height='166', src='../assets/img/logo/logo-short-dark.png', alt='logo')
 						nav#main-aside-menu
 							ul
-								li.submenu
+								li
 									a(href='#') Dashboard
 								li.submenu
-									a(href='#') Maintenance
+									a(href='#') #{user.strLicenseFirstName} #{user.strLicenseLastName}
 									ul
 										li
-											a.menu-title(href='/admin/motorist') Motorist
+											a(href='/index') My Account
 										li
-											a.menu-title(href='#') Enforcer
+											a(href='/index/settings') Settings
 										li
-											a.menu-title(href='#') Traffic Laws and Violation
-								li.submenu
-									a(href='#') ADMIN
-									ul
-										li
-											a(href='fullscreen-image') My Account
-										li
-											a(href='fullscreen-image-parallax') Settings
-										li
-											a(href='fullscreen-video') Log out
-								li
-								a#triggerButton(href='#' class='open-modal-ticket' hidden)
-								a#triggerButtonSearch(href='#' class='open-modal-search' hidden)
+											a(href='/logout') Log out
 						footer
 							a.tools-btn(href='#', data-toggle-search='fullscreen')
 								span.tools-btn-icon
@@ -321,40 +308,36 @@ html.no-js(lang='en')
 						.container-fluid
 							.nav-left
 								#logo
-									a(href='overview', data-logo-light='assets/img/logo/logo-short-light.png', data-logo-dark='assets/img/logo/logo-short-dark.png')
-										img(width='145', height='36', src='assets/img/logo/logo-light.png', alt='logo')
+									a(href='overview', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-short-dark.png')
+										img(width='145', height='36', src='../assets/img/logo/logo-light.png', alt='logo')
 							.nav-right
 								nav#main-menu
 									ul
 										li
-											a(href='/admin') Dashboard
-										li
-											a(href='#') Maintenance
-											ul
-												li
-													a.menu-title(href='/admin/motorist') Motorist
-												li
-													a.menu-title(href='/admin/enforcer') Enforcer
+											a(href='/index/dashboard') Dashboard
+											
 										li
 											a(href='#') 
-												//- img#smallIcon(src=`uploads/${user.strImage}`)
-												|   ADMIN
+												img#smallIcon(src=`../uploads/${user.strImage}`)
+												|   #{user.strLicenseFirstName} #{user.strLicenseLastName}
 											ul
 												li
+													a(href='/index') My Account
+												li
+													a(href='/index/settings') Settings
+												li
 													a(href='/logout') Log out
-										
 								ul.nav-tools
 									li.mobile-menu-btn
 										button.toggle-menu(data-toggle='mobile-menu', data-effect='hover')
 											span.menu-label.label-left Menu
 											i.nc-icon-outline.ui-2_menu-35
-			// END MAIN NAVIGATION
+		
 			// BEGIN MAIN CONTENT
 			form#iconForm(method='POST' action='/index' enctype="multipart/form-data")
 				input#strImage(type='file' name='strImage' accept='image/*' hidden='')
 			#main-content.account
-				
-					
+
 				section.section
 					.container
 						.tab-bordered
@@ -362,10 +345,7 @@ html.no-js(lang='en')
 								li#tab1.nav-item(role='presentation')
 									a.active(href='#unpaidTransaction', aria-controls='unpaidTransaction', role='tab', data-toggle='tab')
 										| Ticket Status
-								li#tab2.nav-item(role='presentation')
-									a(href='#finishedTransaction', aria-controls='finishedTransaction', role='tab', data-toggle='tab')
-										| License Status
-
+							
 							
 										
 
@@ -416,47 +396,6 @@ html.no-js(lang='en')
 									center#ticketStatus
 									center
 										ul#pagination-demo.pagination-sm
-								#finishedTransaction.tab-pane.fade.in.active.p-t-20(role='tabpanel')
-									.row
-										.col-xl-6
-											.form-group.form-grouped.form-grouped-select-2(style='width: 288px; margin: 10px')
-												label Sort by:
-												select#sortLicense.form-control.full-width.select2-hidden-accessible(data-search='true', data-style='full-width', tabindex='-1', aria-hidden='true')
-													option(value='strTicketDate') License Number
-													option(value='strAuthorityFirstName') Motorist Name
-													option(value='strTicketAddress') Released
-										.col-xl-6
-											a#searchLicense.btn.btn-primary.btn-bordered.btn-lg.icon-left-effect.m-t-30(hidden href='#', data-toggle-search='fullscreen')
-												i.nc-icon-outline.ui-1_zoom
-												span Show Fullscreen
-											.form-group.form-grouped.form-grouped-select-2(style='width: 288px; margin: 10px')
-												label Search by:
-												select#searchLicenseAttrib.form-control.full-width.select2-hidden-accessible(onchange="search();" data-search='true', data-style='full-width', tabindex='-1', aria-hidden='true')
-													option(value='strLicenseLicenseNo') License Number
-													option(value='strLicenseFirstName') Motorist
-									.row
-										.col-xl-2
-											.form-group.form-grouped.form-grouped-select-2(style='width: 288px; margin: 10px')
-												label Show:
-												select.showLicensePage.form-control.full-width.select2-hidden-accessible(data-search='true', data-style='full-width', tabindex='-1', aria-hidden='true')
-													-for(var i = 1; i <= 20; i++)
-														-if(i == 10)
-															option(value=i selected) #{i}
-														-else
-															option(value=i) #{i}
-										.col-xl-2
-											.form-group.form-grouped.form-grouped-select-2(style='width: 288px; margin: 10px')
-												label Filter by:
-												select#filterLicense.form-control.full-width.select2-hidden-accessible(data-search='true', data-style='full-width', tabindex='-1', aria-hidden='true')
-													option(value=0) On Hold
-													option(value=1) On Release
-													option(value=2) Released
-									center#licenseStatus
-									center
-										ul#pagination-demo2.pagination-sm
-
-
-
 								
 								
 
@@ -472,7 +411,7 @@ html.no-js(lang='en')
 						.col-lg-12.col-md-12
 							.widget.widget-text
 								h3.widget-title Who are we?
-								img.footer-logo(width='200', height='50', src='assets/img/logo/logo-aside-light.png', alt='logo')
+								img.footer-logo(width='200', height='50', src='../assets/img/logo/logo-aside-light.png', alt='logo')
 								p Isabel, a web and mobile application that simplifies traffic violation process.
 								p
 									i.nc-icon-outline.ui-1_home-minimal
@@ -565,23 +504,6 @@ html.no-js(lang='en')
 							#resultSearch.col-xl-12
 								
 		//MODAL FOR EVERY FUCKING THING
-		.slickModal(style="top:0% !important; z-index: 999999999999999999999 !important;" data-plugin-options='{"windowWidth":"1000px","windowLocation":"center","windowTransitionEffect":"slideTop","closeButton":"icon","reopenClass":"open-modal-sig"}')
-			.window
-				.wrapper.white-modal
-					.p-30
-						h3.m-t-0.t-center Signature
-							.row
-								canvas#signature-pad.signature-pad(style="border: 2px solid #557f90" width='400', height='200')
-							.row
-								.col.xl-6
-									button#undo.btn.btn-primary.btn-block
-										strong(style="font-weight: bold") UNDO
-							.row
-								.col.xl-6
-									button#submit.btn.btn-primary.btn-block
-										strong(style="font-weight: bold") SUBMIT
-
-
 		.slickModal(style="top:0% !important" data-plugin-options='{"windowWidth":"1000px","windowLocation":"center","windowTransitionEffect":"slideTop","closeButton":"icon","reopenClass":"open-modal-ticket"}')
 			.window
 				.wrapper.white-modal
@@ -623,14 +545,16 @@ html.no-js(lang='en')
 												th Violation Description
 												th Penalty
 										tbody#tbody
+							
 								#fuck.form-group.form-grouped
 									label Receipt Number
-									input#intReceiptNumber.form-control( style='cursor: pointer;' type='text' value=" ")
+									input#intReceiptNumber.form-control( style='cursor: pointer;' type='text' value="")
 								center
-									a#sigButton(class="open-modal-sig") 
-										button#paymentButton.btn.btn-primary.btn-block
-											strong(style="font-weight: bold") FLAG AS PAID
-									
+									button#paymentButton.btn.btn-primary.btn-block
+										strong(style="font-weight: bold") Submit
+								center
+									button#generate.btn.btn-primary.btn-block
+										strong(style="font-weight: bold") Generate Receipt
 										
 											
 											
@@ -641,70 +565,63 @@ html.no-js(lang='en')
 		// END BUILDER
 		a.scrollup(href='#')
 			i.nc-icon-outline.arrows-1_minimal-up
-		script(src='assets/js/libs/jquery-ui/jquery-ui.min.js')
-		script(src='assets/js/libs/gsap/src/minified/TweenMax.min.js')
-		script(src='assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
-		script(src='assets/js/libs/tether/dist/js/tether.min.js')
-		script(src='assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
-		script(src='assets/js/libs/superfish/dist/js/superfish.min.js')
-		script(src='assets/js/libs/appear/jquery.appear.js')
-		script(src='assets/js/libs/skrollr/dist/skrollr.min.js')
-		script(src='assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js')
-		script(src='assets/js/navigation.js')
-		script(src='assets/js/search.js')
-		script(src='assets/js/builder.js')
-		script(src='assets/js/widgets.js')
-		script(src='assets/js/main.js')
+		script(src='../assets/js/libs/jquery-ui/jquery-ui.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/TweenMax.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
+		script(src='../assets/js/libs/tether/dist/js/tether.min.js')
+		script(src='../assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
+		script(src='../assets/js/libs/superfish/dist/js/superfish.min.js')
+		script(src='../assets/js/libs/appear/jquery.appear.js')
+		script(src='../assets/js/libs/skrollr/dist/skrollr.min.js')
+		script(src='../assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js')
+		script(src='../assets/js/navigation.js')
+		script(src='../assets/js/search.js')
+		script(src='../assets/js/builder.js')
+		script(src='../assets/js/widgets.js')
+		script(src='../assets/js/main.js')
 
-		script(src='assets/js/bootpag.js')
+		script(src='../assets/js/bootpag.js')
 
-		script(src='assets/js/libs/jquery-ui/jquery-ui.min.js')
-		script(src='assets/js/libs/gsap/src/minified/TweenMax.min.js')
-		script(src='assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
-		script(src='assets/js/libs/tether/dist/js/tether.min.js')
-		script(src='assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
-		script(src='assets/js/libs/superfish/dist/js/superfish.min.js')
-		script(src='assets/js/libs/appear/jquery.appear.js')
-		script(src='assets/js/libs/skrollr/dist/skrollr.min.js')
-		script(src='assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js')
+		script(src='../assets/js/libs/jquery-ui/jquery-ui.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/TweenMax.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
+		script(src='../assets/js/libs/tether/dist/js/tether.min.js')
+		script(src='../assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
+		script(src='../assets/js/libs/superfish/dist/js/superfish.min.js')
+		script(src='../assets/js/libs/appear/jquery.appear.js')
+		script(src='../assets/js/libs/skrollr/dist/skrollr.min.js')
+		script(src='../assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js')
 		// BEGIN PAGE SCRIPT
-		script(src='assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js?rev=5.0')
-		script(src='assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0')
-		script(src='assets/js/libs/select2/dist/js/select2.full.min.js')
-		script(src='assets/js/libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js')
+		script(src='../assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js?rev=5.0')
+		script(src='../assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0')
+		script(src='../assets/js/libs/select2/dist/js/select2.full.min.js')
+		script(src='../assets/js/libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js')
 		
 		
-		script(src="assets/js/libs/fullpage.js/dist/jquery.fullpage.min.js")
-		script(src="assets/js/libs/jquery.fitvids/jquery.fitvids.js")
-		script(src="assets/js/plugins/slick-modal/jquery.slick-modals.min.js")
-		script(src='assets/js/libs/owl.carousel/dist/owl.carousel.min.js')
-		script(src='assets/js/libs/bootstrap-validator/dist/validator.min.js')
-		script(src='assets/js/libs/flexslider/jquery.flexslider-min.js')
-		script(src='assets/js/libs/multiscroll.js/jquery.multiscroll.min.js')
+		script(src="../assets/js/libs/fullpage.js/dist/jquery.fullpage.min.js")
+		script(src="../assets/js/libs/jquery.fitvids/jquery.fitvids.js")
+		script(src="../assets/js/plugins/slick-modal/jquery.slick-modals.min.js")
+		script(src='../assets/js/libs/owl.carousel/dist/owl.carousel.min.js')
+		script(src='../assets/js/libs/bootstrap-validator/dist/validator.min.js')
+		script(src='../assets/js/libs/flexslider/jquery.flexslider-min.js')
+		script(src='../assets/js/libs/multiscroll.js/jquery.multiscroll.min.js')
 		script(src='http://maps.google.com/maps/api/js')
-		script(src='assets/js/libs/gmaps/gmaps.min.js')
-		script(src='assets/js/map.js')
-		script(src='assets/js/widgets.js')
-		script(src="assets/js/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")
-		script(src='assets/js/sliders.js')
-		script(src='assets/js/widgets.js')
+		script(src='../assets/js/libs/gmaps/gmaps.min.js')
+		script(src='../assets/js/map.js')
+		script(src='../assets/js/widgets.js')
+		script(src="../assets/js/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")
+		script(src='../assets/js/sliders.js')
+		script(src='../assets/js/widgets.js')
 		// END PAGE SCRIPT
-		script(src='assets/js/navigation.js')
-		script(src='assets/js/search.js')
-		script(src='assets/js/builder.js')
-		script(src='assets/js/main.js')
-		script(src='assets/js/sigpad.js')
-		script(type='text/javascript', src='js/sweetalert.js')
+		script(src='../assets/js/navigation.js')
+		script(src='../assets/js/search.js')
+		script(src='../assets/js/builder.js')
+		script(src='../assets/js/main.js')
 
 		script.
 			function search() {
 				$(window).ready(function(){
 					$('#searchfullscreen').trigger('click')
-					
-					
-					
-
-				
 				})
 			}
 		script.
@@ -732,38 +649,54 @@ html.no-js(lang='en')
 				});
 			}
 		script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBnLyu9KRX0dTheISKLkC2IUUBKeWD7TdU&callback=initMap')
-	
-
-			
-
+		script.
+			$(document).ready(function(){
+				$("#paymentButton").click(function(){
+					var x = $("#intReceiptNumber").val()
+					var y = $("#intTicketID").val()
+					$.post('/index/payment', {
+						x: x,
+						y: y,
+					}).done(function(data){
+						location.reload()
+					})
+				})
+			})
 		script.
 			function trigs(ticketNumber){
 				$(document).ready(function(){
+					$("#generate").click(function(){
+						window.open(`/index/receipt/` + $("#intTicketID").val())
+					})
+
+
+
+
 					$('#triggerButton').trigger('click');
-					$.post('/admin/ticket', {intUserViolationTicketID: ticketNumber})
+					$.post('/index/ticket', {intUserViolationTicketID: ticketNumber})
 					.done(function(data){
 						if(data[0].isPaid == 0){
 							$("#smaller").text("Status: Unpaid")
 							$("#smaller").css("color", "red")
-							$('#fuck').hide()
-							
-							
+							$('#generate').hide()
+							$('#paymentButton').show()
 						}
 						else if(data[0].isPaid == 3){
 							$("#smaller").css("color", "yellow")
 							$("#smaller").text("Status: Pending")
 							$('#intReceiptNumber').val(data[0].intReceiptNumber)
 							$('#intReceiptNumber').attr("disabled");
-							$('#sigButton').show();
-							$('#fuck').show();
+							$('#generate').hide()
+							$('#paymentButton').hide()
 						}
 						else{
 							
 							$("#smaller").css("color", "green")
 							$("#smaller").text("Status: Paid")
 							$('#intReceiptNumber').val(data[0].intReceiptNumber)
-							$('#sigButton').hide();
-							$('#fuck').show()
+							$('#intReceiptNumber').attr("disabled");
+							$('#paymentButton').hide()
+							$('#generate').show()
 						}
 						$('#intTicketID').val(data[0].intTicketID)
 						$('#strLicenseNumber').val(data[0].strTicketLicenseNo)
@@ -785,54 +718,4 @@ html.no-js(lang='en')
 					})
 				});
 			}
-		script.
-			$(document).ready(function(){
-				var canvas = document.querySelector("canvas");
-
-					var signaturePad = new SignaturePad(canvas, {backgroundColor: 'rgb(255, 255, 255)'});
-
-					$('#submit').click(function(){
-						if (signaturePad.isEmpty()) {
-							swal({
-								title: 'No Signature',
-								icon: 'error',
-								text: 'Please provide signature below.',
-								button: 'Okay',
-							})
-						}
-						else{
-							var data = signaturePad.toDataURL("image/jpeg")
-							console.log(data)
-							swal({
-								title: 'Confirmation',
-								icon: 'warning',
-								text: 'Are you sure?',
-								buttons:{
-									Yes: 'Yes',
-									No: 'No',
-								},
-							}).then((value) => {
-								if(value == "Yes"){
-									$.post('/admin/paymentconfirm', {intTicketID: $('#intTicketID').val(), strSignature: data})
-									.done(function(res){
-										swal({
-											title: 'Success',
-											icon: 'success',
-										})
-										location.reload();
-									});
-							
-								}
-								})
-							}
-						
-					})
-
-					$('#undo').click(function(){
-						
-						
-							signaturePad.clear()
-						
-					})
-			})
 		

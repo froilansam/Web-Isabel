@@ -11,7 +11,7 @@ html.no-js(lang='en')
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		title Login | Engage Html Template
+		title Settings | Isabel
 		meta(name='description', content='Create your website using Engage multipurposes html template: corporate, ecommerce, blog, creative and much more. Only $17 for unlimited possibilities.')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel='apple-touch-icon', href='../assets/img/various/apple-touch-icon.png')
@@ -101,21 +101,17 @@ html.no-js(lang='en')
 								nav#main-menu
 									ul
 										li
-											a(href='#') Dashboard
-											ul
-												li
-													a.menu-title(href='#') Traffic Offenses
-												li
-													a.menu-title(href='#') Payments
+											a(href='/index/dashboard') Dashboard
+											
 										li
 											a(href='#') 
 												img#smallIcon(src=`../uploads/${user.strImage}`)
 												|   #{user.strLicenseFirstName} #{user.strLicenseLastName}
 											ul
 												li
-													a(href='fullscreen-image') My Account
+													a(href='/index') My Account
 												li
-													a(href='fullscreen-image-parallax') Settings
+													a(href='/index/settings') Settings
 												li
 													a(href='/logout') Log out
 								ul.nav-tools

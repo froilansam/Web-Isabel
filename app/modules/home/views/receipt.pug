@@ -1,0 +1,94 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title Receipt ##{details[0].intTicketID}
+		link(rel='stylesheet', href='../../assets/js/libs/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='../../assets/css/styles.css')
+	body(style="height:297mm;width:210mm;")
+		#print
+			.row(style='background-color:rgb(85,127,144);')
+				.col.flex-row.justify-content-center.align-items-center.align-content-center
+					img.justify-content-center(src='../../assets/img/new_logo_hackister.png', height='100px', style='margin:0px;')
+			p.lead(style='/*width:1022px;*/font-weight:bold;color:rgb(85,127,144);')
+				| Ticket Number: #{details[0].intTicketID}
+				br
+			p.lead(style='font-weight:bold;color:rgb(85,127,144);') License Number: #{details[0].strTicketLicenseNo}
+			.table-responsive
+				table.table
+					thead
+						tr
+							th Section
+							th Violation
+							th Fine
+					tbody
+						-var total = 0
+						-if(details)
+							-for(var i = 0; i < details.length; i++)
+								-total = total + details[i].intCharge
+								tr
+									td #{details[i].strSection}
+									td #{details[i].strViolation}
+									td #{details[i].intCharge}
+						
+						tr
+							td Total
+							td 
+							td Php. #{total}
+			div
+				.container
+					.row
+						.col-md-3
+						.col-md-3
+						.col-md-3
+						.col-md-3
+			div
+				.container
+					.row
+						.col-md-3
+						.col-md-3
+						.col-md-3
+						.col-md-3
+			div
+				.container
+					.row(style='height:170px;')
+						.col-md-3
+						.col-md-3
+						.col-md-3(style='width:262px;')
+						.col-md-3
+							p
+							img(src=details[0].strSignature, width='100%', height='100%', style='width:205px;height:82px;')
+							p _______________________________
+							p CTMDO ACCOUNTANT
+		//- div
+		//- 	.container
+		//- 		.row
+		//- 			.col-md-4
+		//- 			.col-md-4
+		//- 				button.btn.btn-primary(type='button', onclick="genPDF()" style='height:60px;width:284px;background-color:rgb(85,127,144);') DOWNLOAD PDF
+		//- 			.col-md-4
+
+
+		script(src='../../assets/js/jquery.min.js')
+		script(src='../../assets/js/jspdf.js')
+		script(src='../../assets/js/html2canvas.js')
+		script(src='../../assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
+		script.
+
+			function genPDF() {
+				html2canvas(document.getElementById("print"))
+					.then(canvas => {
+						var img = canvas.toDataURL("image/png")
+						var doc = new jsPDF();
+						doc.addImage(img, 'JPEG', 0 ,0)
+						doc.save('text.pdf')
+						
+						
+					})
+				
+			}
+			$(document).ready(function(){
+				genPDF();
+				
+			})

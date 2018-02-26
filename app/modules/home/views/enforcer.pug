@@ -1,0 +1,618 @@
+doctype html
+//if lt IE 7
+	html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')
+//if IE 7
+	html.no-js.lt-ie9.lt-ie8(lang='')
+//if IE 8
+	html.no-js.lt-ie9(lang='')
+// [if gt IE 8] <!
+html.no-js(lang='en')
+	// <![endif]
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title Enforcer | Isabel
+		meta(name='description', content='Violate hassle-free')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='apple-touch-icon', href='../assets/img/various/apple-touch-icon.png')
+		link(rel='shortcut icon', href='../assets/img/favicon.ico', type='image/x-icon')
+		link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300,400,700,800', rel='stylesheet')
+		link(rel='stylesheet', href='assetssample/font-awesome-4.7.0/css/font-awesome.css')
+		link(rel='stylesheet', href='../assets/js/libs/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='../assets/css/icons/nucleo.css')
+		link(rel='stylesheet', href='../assets/js/libs/animate.css/animate.min.css')
+		// BEGIN PAGE STYLE
+		link(rel='stylesheet', href='../assets/js/libs/flexslider/flexslider.css')
+		link(rel='stylesheet', href="../assets/js/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css")
+		link(rel='stylesheet', href='../assets/css/sliders.css')
+		link(rel="stylesheet" href="../assets/js/plugins/slick-modal/sm-minified.css")
+		link(rel='stylesheet', href='../assets/css/form.css')
+		// END PAGE STYLE
+		link(rel='stylesheet', href='../assets/css/buttons.css')
+		link(rel='stylesheet', href='../assets/css/builder.css')
+		link(rel='stylesheet', href='../assets/css/colors.css')
+		link(rel='stylesheet', href='../assets/css/footers.css')
+		link(rel='stylesheet', href='../assets/css/main.css')
+		link(rel='stylesheet', href='../assets/css/nav.css')
+		link(rel='stylesheet', href='../assets/css/preloader.css')
+		link(rel='stylesheet', href='../assets/css/themes.css')
+		link(rel='stylesheet', href='../assets/css/ui.css')
+		link(rel='stylesheet', href='../assets/css/widgets.css')
+		link(rel='stylesheet', href='../css/formValidation.css')
+		link(rel='stylesheet', href='../css/message.css', type='text/css')
+		style.
+			.table-bordered tr>th:after, .table-bordered tr>td:after{
+				border-bottom: none;
+				border-right: none;
+			}
+		script(src='../assets/js/modernizr-2.8.3-respond-1.4.2.min.js')
+		script(src='//code.jquery.com/jquery-2.1.3.min.js')
+		script(src='../assets/js/jquery.twbsPagination.js')
+
+	body.header-light.creative-design.footer-reveal(data-page-type='ecommerce')
+		//if lt IE 8
+			p.browserupgrade
+				| You are using an 
+				strong outdated
+				|  browser. Please 
+				a(href='http://browsehappy.com/') upgrade your browser
+				|  to improve your experience.
+		// BEGIN PRELOADER
+		.loader-wrapper
+			.loader-circle
+		// END PRELOADER
+		#wrapper
+			// BEGIN LATERAL NAVIGATION
+			aside#aside-nav
+				#main-aside-navigation
+					.main-nav-wrapper
+						.close-aside-nav
+							i.nc-icon-outline.ui-1_simple-remove
+						#aside-logo
+							a(href='#', data-logo-light='../assets/img/logo/logo-short-light.png', data-logo-dark='../assets/img/logo/logo-aside-dark.png')
+								img(width='170', height='166', src='../assets/img/logo/logo-short-dark.png', alt='logo')
+						nav#main-aside-menu
+							ul
+								li.submenu
+									a(href='#') Dashboard
+									ul
+										li
+											a.menu-title(href='#') Traffic Offenses
+										li
+											a.menu-title(href='#') Payments
+								li.submenu
+									a(href='#') Maintenance
+									ul
+										li
+											a.menu-title(href='#') Motorist
+										li
+											a.menu-title(href='#') Enforcer
+										li
+											a.menu-title(href='#') Traffic Laws and Violation
+								li.submenu
+									a(href='#') ADMIN
+									ul
+										li
+											a(href='fullscreen-image') My Account
+										li
+											a(href='fullscreen-image-parallax') Settings
+										li
+											a(href='fullscreen-video') Log out
+								li
+								a#triggerButton(href='#' class='open-modal-ticket' hidden)
+								a#triggerButtonSearch(href='#' class='open-modal-search' hidden)
+						footer
+							a.tools-btn(href='#', data-toggle-search='fullscreen')
+								span.tools-btn-icon
+									i.nc-icon-outline.ui-1_zoom
+							a.tools-btn(href='shop-wishlist')
+								span.tools-btn-icon
+									i.nc-icon-outline.ui-2_favourite-28
+								span.wishlist_items_number 0
+							a.tools-btn(href='shopping-cart')
+								span.tools-btn-icon
+									i.nc-icon-glyph.shopping_bag-16
+								span.cart_items_number 0
+			// END LATERAL NAVIGATION
+			// BEGIN MAIN NAVIGATION
+			header#header
+				#main-navigation.submenu-dark
+					.main-nav-wrapper
+						.container-fluid
+							.nav-left
+								#logo
+									a(href='overview', data-logo-light='assets/img/logo/logo-short-light.png', data-logo-dark='assets/img/logo/logo-short-dark.png')
+										img(width='145', height='36', src='assets/img/logo/logo-light.png', alt='logo')
+							.nav-right
+								nav#main-menu
+									ul
+										li
+											a(href='/admin') Dashboard
+										li
+											a(href='#') Maintenance
+											ul
+												li
+													a.menu-title(href='/admin/motorist') Motorist
+												li
+													a.menu-title(href='/admin/enforcer') Enforcer
+										li
+											a(href='#') 
+												//- img#smallIcon(src=`uploads/${user.strImage}`)
+												|   ADMIN
+											ul
+												li
+													a(href='/logout') Log out
+										
+								ul.nav-tools
+									li.mobile-menu-btn
+										button.toggle-menu(data-toggle='mobile-menu', data-effect='hover')
+											span.menu-label.label-left Menu
+											i.nc-icon-outline.ui-2_menu-35
+			// END MAIN NAVIGATION
+			// BEGIN MAIN CONTENT
+			#main-content.account
+				a#slickerButton(class="open-modal-enfo")
+					button ulol
+				section.section
+					.container
+						.title.title-line
+							p Add Enforcer
+					form#enforcerForm
+						.col-lg-12
+							.col-lg-2
+							.col-lg-8
+								.row
+									.col-lg-6
+										.form-group.form-grouped
+											label Username
+											input#strAuthUsername.form-control(name='strAuthUsername' style='cursor: pointer;' type='text')
+									.col-lg-6
+										.form-group.form-grouped
+											label Password
+											input#strAuthPassword.form-control(name="strAuthPassword" style='cursor: pointer;' type='password')
+								.row
+									.col-lg-12
+										.form-group.form-grouped
+											label First Name
+											input#strAuthFirstName.form-control(name="strAuthFirstName" style='cursor: pointer;' type='text')
+								.row
+									.col-lg-12
+										.form-group.form-grouped
+											label Middle Name
+											input#strAuthMiddleName.form-control(name="strAuthMiddleName" style='cursor: pointer;' type='text')
+								.row
+									.col-lg-12
+										.form-group.form-grouped
+											label Last Name
+											input#strAuthLastName.form-control(name="strAuthLastName" style='cursor: pointer;' type='text')
+						center
+							button.btn.btn-embossed.icon-left-effect(type='submit' style='background-color: #557f90 !important')
+								i.nc-icon-outline.media-1_camera-18
+								span Add Enforcer
+					br
+					br
+					.container
+						.title.title-line
+							p Enforcer Maintenance
+						.table-responsive
+							table.table.table-bordered
+								thead
+									tr
+										th.title-h.bg-primary Full Name
+										th Username
+										th Status
+										th Actions
+								tbody#table
+									-if(auths)
+										-for(var i = 0; i < auths.length; i++)
+											tr
+												td.title-h.bg-primary #{auths[i].strAuthorityFirstName} #{auths[i].strAuthorityLastName}
+												td #{auths[i].strAuthorityUserName}
+												td(style='color: green;') Active •
+												td
+													a(class="open-modal-enfo" onclick=`enfo('${auths[i].strAuthorityUserName}')`)
+														button.btn.btn-embossed.icon-left-effect(style='background-color: transparent!important; border: 1px solid #557f90; color: #557f90;')
+															i.nc-icon-outline.shopping_tag-content
+															span Edit Enforcer
+													br
+													br
+													a(href=`/admin/deleteenfo/${auths[i].strAuthorityUserName}`)
+														button.btn.btn-embossed.icon-left-effect(style='background-color: #557f90 !important')
+															i.nc-icon-outline.ui-1_simple-remove
+															span Remove Enforcer
+									
+						center
+							ul#pagination-demo.pagination-sm
+								
+
+							
+							
+							
+			
+			// END MAIN CONTENT
+			// BEGIN FOOTER
+			footer#footer
+				#footer-main.container-large
+					.row
+						.col-lg-12.col-md-12
+							.widget.widget-text
+								h3.widget-title Who are we?
+								img.footer-logo(width='200', height='50', src='../assets/img/logo/logo-aside-light.png', alt='logo')
+								p Isabel, a web and mobile application that simplifies traffic violation process.
+								p
+									i.nc-icon-outline.ui-1_home-minimal
+									|  Polytechnic University of the Philippines
+								p
+									i.nc-icon-outline.ui-1_email-85
+									a(href='mailto:contact@isabel.com') contact@isabel.com
+								p
+									i.nc-icon-outline.tech_mobile
+									a(href='tel:+1-888-541-7871', data-toggle='tooltip', data-placement='bottom', title='', data-original-title='Call us Now')  87000
+
+				#footer-bottom
+					.container-large
+						.row
+							.col-sm-12.t-center
+								p.copyright © Isabel 2017. All Rights Reserved.
+			// END FOOTER
+		// BEGIN BUILDER
+		#builder.builder.hidden-sm-down
+			a.builder-toggle
+				i.nc-icon-outline.ui-1_settings-gear-65
+			.inner
+				.builder-container
+					.builder-section.builder-buy
+						a.btn.btn-primary.btn-block.t-important(href='#') Buy Engage
+						a#reset-style(href='#') reset style
+					.builder-section.builder-layout
+						h4 Layout
+						.btn.btn-dark.btn-bordered.t-important(data-layout='boxed') BOXED
+						.btn.btn-dark.t-important(data-layout='wide') WIDE
+						.builder-boxed-bg
+							h4 Boxed Background
+							.row
+								.col-xs-12.custom-bg-background
+									.boxed-bg(data-bg-img='bg/pattern/3.png')
+									.boxed-bg(data-bg-img='bg/pattern/2.png')
+									.boxed-bg(data-bg-img='creative/full-18.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='creative/full-4.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='nature/full-20.jpg', data-pattern='false')
+									.boxed-bg(data-bg-img='nature/full-42.jpg', data-pattern='false')
+					.builder-section.builder-menu-layout
+						h4 Menu Style
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='lateral') Lateral
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='overlay') Overlay
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='offcanvas') Offcanvas
+							a.btn.btn-dark.t-important(href='#', data-menu='right-align') Right align
+						div
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='left-align') Left align
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu='logo-center') Logo center
+					.builder-section.builder-menu-style
+						h4 Menu Color
+						div
+							a.btn.btn-dark.t-important(href='#', data-menu-style='transparent') Transparent
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='image') Image
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='dark') Dark
+							a.btn.btn-dark.btn-bordered.t-important(href='#', data-menu-style='light') Light
+					.builder-section.builder-footer
+						h4 Footer
+						.btn.btn-dark.t-important(data-footer='normal') Normal
+						.btn.btn-dark.btn-bordered.t-important(data-footer='reveal') Reveal
+					.builder-section.builder-themes
+						h4 Theme Colors
+						.row
+							.col-xs-12
+								.theme-color.blue.lighten-2(data-theme='blue')
+								.theme-color.indigo.lighten-2(data-theme='indigo')
+								.theme-color.deep-purple.lighten-2(data-theme='purple')
+								.theme-color.teal.lighten-2(data-theme='teal')
+								.theme-color.amber(data-theme='amber')
+								.theme-color.deep-orange.lighten-1.active(data-theme='default')
+								.theme-color.red.lighten-1(data-theme='red')
+								.theme-color.grey.darken-4(data-theme='dark')
+					.builder-section.builder-dark-theme
+						.btn.btn-dark.btn-block.t-important(data-skin='dark') Dark Theme
+		.search-overlay.overlay-dark(style='z-index: 999 !important')
+			a.search-overlay-close(href='#')
+				i.nc-icon-outline.ui-1_simple-remove
+			form
+				input#searchInput(type='search', placeholder='Search...')
+				button#search
+					i.nc-icon-outline.ui-1_zoom-split
+		.slickModal(style="top:0% !important" data-plugin-options='{"windowWidth":"1000px","windowLocation":"center","windowTransitionEffect":"slideTop","closeButton":"icon","reopenClass":"open-modal-enfo"}')
+			.window
+				.wrapper.white-modal
+					.p-30
+						h3.m-t-0.t-center Information
+						form#formform(method='post' action='/admin/updateenfo')
+							.row
+								.account-section
+									.row
+										.col-lg-6
+											.form-group.form-grouped
+												label Username
+												input#strAuthUsername2.form-control(name='strAuthUsername2' style='cursor: pointer;' type='text')
+												input#strAuthUsername3.form-control(hidden name='strAuthUsername3' style='cursor: pointer;' type='text')
+										.col-lg-6
+											.form-group.form-grouped
+												label Change Password
+												input#strAuthPassword2.form-control(name="strAuthPassword2" style='cursor: pointer;' type='password')
+									.row
+										.col-lg-12
+											.form-group.form-grouped
+												label First Name
+												input#strAuthFirstName2.form-control(name="strAuthFirstName2" style='cursor: pointer;' type='text')
+									.row
+										.col-lg-12
+											.form-group.form-grouped
+												label Middle Name
+												input#strAuthMiddleName2.form-control(name="strAuthMiddleName2" style='cursor: pointer;' type='text')
+									.row
+										.col-lg-12
+											.form-group.form-grouped
+												label Last Name
+												input#strAuthLastName2.form-control(name="strAuthLastName2" style='cursor: pointer;' type='text')
+							center
+								button.btn.btn-embossed.icon-left-effect(type='submit' style='background-color: #557f90 !important')
+									i.nc-icon-outline.media-1_camera-18
+									span Save	
+		// END BUILDER
+		a.scrollup(href='#')
+			i.nc-icon-outline.arrows-1_minimal-up
+		script(src='../assets/js/libs/jquery/dist/jquery.min.js')
+		script(src='../assets/js/libs/jquery-ui/jquery-ui.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/TweenMax.min.js')
+		script(src='../assets/js/libs/gsap/src/minified/plugins/ScrollToPlugin.min.js')
+		script(src='../assets/js/libs/tether/dist/js/tether.min.js')
+		script(src='../assets/js/libs/bootstrap/dist/js/bootstrap.min.js')
+		script(src='../assets/js/libs/superfish/dist/js/superfish.min.js')
+		script(src='../assets/js/libs/appear/jquery.appear.js')
+		script(src='../assets/js/libs/skrollr/dist/skrollr.min.js')
+		script(src="../assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js")
+		// BEGIN PAGE SCRIPT
+		script(src="../assets/js/libs/fullpage.js/dist/jquery.fullpage.min.js")
+		script(src="../assets/js/libs/jquery.fitvids/jquery.fitvids.js")
+		script(src="../assets/js/plugins/slick-modal/jquery.slick-modals.min.js")
+		script(src='../assets/js/libs/owl.carousel/dist/owl.carousel.min.js')
+		script(src='../assets/js/libs/bootstrap-validator/dist/validator.min.js')
+		script(src='../assets/js/libs/flexslider/jquery.flexslider-min.js')
+		script(src='../assets/js/libs/multiscroll.js/jquery.multiscroll.min.js')
+		script(src='http://maps.google.com/maps/api/js')
+		script(src='../assets/js/libs/gmaps/gmaps.min.js')
+		script(src='../assets/js/map.js')
+		script(src='../assets/js/widgets.js')
+		script(src="../assets/js/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js")
+		script(src='../assets/js/sliders.js')
+		// END PAGE SCRIPT
+		script(src='../assets/js/navigation.js')
+		script(src='../assets/js/search.js')
+		script(src='../assets/js/builder.js')
+		script(src='../assets/js/moment.js')
+		script(src='../assets/js/main.js')
+		script(type='text/javascript', src='../js/formValidation.js')
+		script(type='text/javascript', src='../js/formValidation.js')
+		script(type='text/javascript', src='../js/framework/bootstrap.js')
+		script(type='text/javascript', src='../js/sweetalert.js')
+
+		script.
+			function search() {
+				$(window).ready(function(){
+					$('#searchfullscreen').trigger('click')
+				})
+			}
+		script.
+			function initMap() {
+				var map = new google.maps.Map(document.getElementById('map-dark'), {
+				zoom: 15,
+				center: {lat: -34.397, lng: 150.644}
+				});
+				var geocoder = new google.maps.Geocoder();
+				geocodeAddress(geocoder, map);
+				
+			}
+			function geocodeAddress(geocoder, resultsMap) {
+				var address = document.getElementById('address').value;
+				geocoder.geocode({'address': address}, function(results, status) {
+				if (status === 'OK') {
+				resultsMap.setCenter(results[0].geometry.location);
+				var marker = new google.maps.Marker({
+				map: resultsMap,
+				position: results[0].geometry.location
+				});
+				} else {
+				console.log('Geocode was not successful for the following reason: ' + status);
+				}
+				});
+			}
+		script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBnLyu9KRX0dTheISKLkC2IUUBKeWD7TdU&callback=initMap')
+		
+		script.
+			function enfo(strAuthUsername){
+				alert('accessed Enfo')
+				alert(strAuthUsername)
+				$.post('/admin/editenfo', {strAuthorityUsername: strAuthUsername})
+				.done(function(data){
+					var authauth = data.authauth;
+					alert(JSON.stringify(authauth))
+					$('#strAuthUsername2').val(authauth.strAuthorityUserName)
+					$('#strAuthUsername3').val(authauth.strAuthorityUserName)
+					$('#strAuthFirstName2').val(authauth.strAuthorityFirstName)
+					$('#strAuthMiddleName2').val(authauth.strAuthorityMiddleName)
+					$('#strAuthLastName2').val(authauth.strAuthorityLastName)
+					$("#slickerButton").trigger('click')
+				})
+			}
+		script.
+			$(document).ready(function(){
+				$("#formform").formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						strAuthUsername2: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your username.'
+								},
+								stringLength: {
+									min: 6,
+									max: 15,
+									message: 'The username must be more than 5 and less than 16 characters long'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+								remote: {
+									url: '/admin/checkenfo',
+									message: 'Enforcer username is already existing',
+									validKey: 'enforcer',
+									type: 'POST'
+								},
+							}
+						},
+						
+						strAuthPassword2: {
+							validators: {
+								stringLength: {
+									min: 8,
+									message: 'The password must be more than 7 characters'
+								},
+							}
+						},
+						
+						strAuthFirstName2: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter Enforcer First Name'
+								},
+								
+							}
+						},	
+						
+						
+						strAuthLastName2: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter Enforcer Last Name'
+								},
+								
+							}
+						},					
+					}
+				})
+
+
+				$('#enforcerForm').formValidation({
+					framework: 'bootstrap',
+					icon: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						strAuthUsername: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your username.'
+								},
+								stringLength: {
+									min: 6,
+									max: 15,
+									message: 'The username must be more than 5 and less than 16 characters long'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9_\.]+$/,
+									message: 'The username can only consist of alphabetical, number, dot and underscore'
+								},
+								remote: {
+									url: '/admin/checkenfo',
+									message: 'Enforcer username is already existing',
+									validKey: 'enforcer',
+									type: 'POST'
+								},
+							}
+						},
+						
+						strAuthPassword: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter your password'
+								},
+								stringLength: {
+									min: 8,
+									message: 'The password must be more than 7 characters'
+								},
+							}
+						},
+						
+						strAuthFirstName: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter Enforcer First Name'
+								},
+								
+							}
+						},	
+						
+						
+						strAuthLastName: {
+							validators: {
+								notEmpty: {
+									message: 'Please enter Enforcer Last Name'
+								},
+								
+							}
+						},					
+					}
+				})
+				.on('success.form.fv', function(e) {
+					console.log('fuckkeeer')
+					e.preventDefault();
+					var $form = $(e.target),
+						fv    = $(e.target).data('formValidation');
+					swal({
+						title: "Confirmation",
+						text: "Are you sure to add this enforcer?",
+						buttons: {
+							Yes: "Yes",
+							No: "No",
+						},
+						icon: 'warning',
+					}).then((value) => {
+						if(value == "Yes"){
+							var strAuthUsername = $('#strAuthUsername').val()
+							var strAuthPassword = $('#strAuthPassword').val()
+							var strAuthFirstName = $('#strAuthFirstName').val()
+							var strAuthMiddleName = $('#strAuthMiddleName').val()
+							var strAuthLastName = $('#strAuthLastName').val()
+							alert(strAuthFirstName)
+							$.post('/admin/saveenfo', {strAuthorityUsername: strAuthUsername, strAuthorityPassword: strAuthPassword, strAuthorityFirstName: strAuthFirstName, strAuthorityMiddleName: strAuthMiddleName, strAuthorityLastName: strAuthLastName})
+							.done(function(data){
+
+
+									var rows = $(`<tr><td class="title-h bg-primary">`+strAuthFirstName+` `+strAuthLastName+`</td><td>`+strAuthUsername+`</td><td style="color: green;">Active •</td><td><a id='mabaitako' class="open-modal-enfo" onclick="enfo('`+strAuthUsername+`')"><button style="background-color: transparent!important; border: 1px solid #557f90; color: #557f90;" class="btn btn-embossed icon-left-effect"><i class="nc-icon-outline shopping_tag-content"></i><span>Edit Enforcer</span></button></a><br/><br/><a href="/admin/deleteenfo/`+strAuthUsername+`"><button style="background-color: #557f90 !important" class="btn btn-embossed icon-left-effect"><i class="nc-icon-outline ui-1_simple-remove"></i><span>Remove Enforcer</span></button></a></td></tr>`);										
+									rows.hide();
+									$('#table').prepend(rows);
+									rows.fadeIn("slow");
+									swal({
+										title: "Success!",
+										text: "Enforcer has been added",
+										buttons: {
+											Okay: "Okay",
+										},
+										icon: 'success',
+									})
+									$("form")[0].reset();
+								
+							})
+						}
+					});
+				});
+
+			})

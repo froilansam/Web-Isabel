@@ -6,7 +6,7 @@
 }());
 
 function googleMap() {
-  var windowHeight = $(window).height();
+  var windowHeight = '400px';
   var myMap = [];
   var geocodingMap, markers = [], map = $('.map'), iterator = 1;
   var iteratorAddress = null;
